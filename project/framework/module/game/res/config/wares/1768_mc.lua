@@ -1,0 +1,1 @@
+{"ware_name":"翡翠","ico":"94186.png","ware_explain":"麻将牌技的象征物。1块翡翠兑换30参赛积分。\n","status":0,"merit_ware_intro":"","ware_introduction":"通过二人雀神中高端锦标赛和岛屿赛获得","composite":0,"last_update":1402390264,"reward_explain":"","ware_id":1768,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:20","reward":0}

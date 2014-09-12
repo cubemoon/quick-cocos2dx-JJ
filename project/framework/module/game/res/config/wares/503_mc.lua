@@ -1,0 +1,1 @@
+{"ware_name":"斗地主特级大师证","ico":"108664.jpg","ware_explain":"荣誉物品，是作为部分比赛报名门槛","status":0,"merit_ware_intro":"","ware_introduction":"斗地主特级大师验证赛冠军，特大候补证合成","composite":0,"last_update":1402389136,"reward_explain":"","ware_id":503,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:17","reward":0}

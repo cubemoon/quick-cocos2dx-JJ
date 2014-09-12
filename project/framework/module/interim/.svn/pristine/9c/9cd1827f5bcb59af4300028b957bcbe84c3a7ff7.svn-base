@@ -1,0 +1,123 @@
+local JJViewGroup = require("sdk.ui.JJViewGroup")
+local GameTip = class("GameTip", JJViewGroup)
+local scheduler = require(cc.PACKAGE_NAME .. ".scheduler")
+local TAG = "GameTip"
+
+function GameTip:ctor(parent)
+    GameTip.super.ctor(self)
+    self.controllerView_ = parent
+    self.theme_ = parent.theme_
+    self.dimens_ = parent.dimens_
+
+    self:createComponents()
+end
+
+function GameTip:createComponents()
+    self.tipLabel = jj.ui.JJLabel.new({
+        text = " ",
+        fontSize = self.dimens_:getDimens(16),
+        color = ccc3(255, 255, 255),
+        singleLine = true,
+        align = ui.TEXT_ALIGN_CENTER,
+        valign = ui.TEXT_VALIGN_CENTER,
+        viewSize = CCSize(self.dimens_:getDimens(316), self.dimens_:getDimens(28)),
+        background = {
+            scale9 = true,
+            image = self.theme_:getImage("game/playview/game_tip.png"),
+        },
+    })
+    self.tipLabel:setText("")
+    self.tipLabel:setAnchorPoint(CCPoint(0.5, 0.5))
+    self.tipLabel:setPosition(self.dimens_.cx, self.dimens_.top - self.dimens_:getDimens(20))
+    self:addView(self.tipLabel)
+
+    -- 背景遮罩
+    self.bgMask_ = require("game.ui.view.JJFullScreenMask").new()
+    self.bgMask_:setOpacity(50) -- 完全透明
+    self.bgMask_:setOnClickListener(handler(self, self.onClick))
+    self.bgMask_:setVisible(false)
+    self.controllerView_:addView(self.bgMask_)
+end
+
+local DOT_START_INDEX = 0
+local DOT_ADD_NUMBER = 2
+function GameTip:showTipMessage(text, interval)
+    --    text = "系统将重新调整位置，请您稍候。"
+    self:unschedule()
+
+    local tick = 2
+    if (interval) then
+        tick = interval
+    end
+
+    if (string.find(text, "系统将重新调整位置")) then
+        self.displayTxt_ = "      系统将重新调整位置，请您稍候."
+        text = self.displayTxt_
+        self.tipLabel:setHAlign(ui.TEXT_ALIGN_LEFT)
+        self.startIndex_ = DOT_START_INDEX
+        self.bgMask_:setVisible(true)
+
+        tick = 0.3
+    else
+        self.tipLabel:setHAlign(ui.TEXT_ALIGN_CENTER)
+        self.bgMask_:setVisible(false)
+        self.displayTxt_ = nil
+    end
+
+    self.tipLabel:setText(self.displayTxt_)
+    self:setVisible(true)
+    self:startTimer(tick)
+end
+
+function GameTip:startTimer(interval)
+    JJLog.i(TAG, "startTimer")
+    self.scheduleHandler_ = scheduler.scheduleGlobal(handler(self, self.onTime), interval)
+end
+
+function GameTip:closeDisplay()
+    JJLog.i(TAG, "closeDisplay")
+    self:setVisible(false)
+    self.bgMask_:setVisible(false)
+    self:unschedule()
+end
+
+function GameTip:onTime()
+    JJLog.i(TAG, "onTime")
+
+    if (self.displayTxt_) then
+        local text = self.displayTxt_
+
+        local index = self.startIndex_
+
+        if (index > 0) then
+            text = text .. string.rep(".", index)
+        end
+
+        self.startIndex_ = self.startIndex_ + 1
+        if (self.startIndex_ > DOT_ADD_NUMBER) then
+            self.startIndex_ = DOT_START_INDEX
+        end
+
+        self.tipLabel:setText(text)
+    else
+        self:closeDisplay()
+    end
+end
+
+function GameTip:unschedule()
+    if self.scheduleHandler_ then
+        scheduler.unscheduleGlobal(self.scheduleHandler_)
+        self.scheduleHandler_ = nil
+    end
+end
+
+function GameTip:onExit()
+    self:unschedule()
+end
+
+function GameTip:onClick(target)
+    if (target == self.bgMask_) then
+    end
+end
+
+return GameTip

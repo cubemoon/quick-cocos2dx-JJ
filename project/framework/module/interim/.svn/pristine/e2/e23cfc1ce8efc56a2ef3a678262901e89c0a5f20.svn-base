@@ -1,0 +1,146 @@
+local JJViewGroup = require("sdk.ui.JJViewGroup")
+local ExitView = class("ExitView", JJViewGroup)
+
+function ExitView:ctor(parentView)
+	ExitView.super.ctor(self, parentView)
+	self.parentView = parentView
+	self.dimens_ = parentView.dimens_
+	self:initView()
+end
+
+function ExitView:initView()
+
+	local background = jj.ui.JJImage.new({
+		 image = "img/interim/ui/exit_alert.png",
+      })
+    background:setAnchorPoint(ccp(0.5, 0.5))
+    background:setPosition(0, 0)
+    background:setScale(self.dimens_.scale_)
+    self:addView(background)
+   
+    self:setAnchorPoint(ccp(0.5, 0.5))
+
+    self.bgSize = CCSizeMake(background:getViewSize().width*background:getScaleX(),
+    background:getViewSize().height*background:getScaleY())
+
+    self.torneyLabel =   jj.ui.JJLabel.new({
+        fontSize = 25*self.dimens_.scale_,
+        color = ccc3(255, 255, 255),
+        text = "退出后，你的牌被托管，输了也将会\n扣掉相应的分数。",
+    })
+    self.torneyLabel:setAnchorPoint(ccp(0.5,0.5))
+    self.torneyLabel:setPosition(0, 0)
+    self:addView(self.torneyLabel)
+
+    self.islandLabel =   jj.ui.JJLabel.new({
+        fontSize = 30*self.dimens_.scale_,
+        color = ccc3(255, 255, 255),
+        text = "返回大厅，将兑换xxx金币",
+    })
+    self.islandLabel:setAnchorPoint(ccp(0.5,0.5))
+    self.islandLabel:setPosition(0, 0)
+    self:addView(self.islandLabel)
+
+    -- local titleLabel = jj.ui.JJLabel.new({
+    -- 	fontSize = 30*self.dimens_.scale_,
+    --     color = ccc3(255, 255, 255),
+    --     text = "退 出",
+    -- })
+    -- titleLabel:setAnchorPoint(ccp(0.5,0.5))
+    -- titleLabel:setPosition(0, self.bgSize.height*0.35)
+    -- self:addView(titleLabel)
+
+    -- self:setTouchEnable(true)
+
+    -- local btn = self:createButton("退出")
+    -- self:addView(btn)
+    -- btn.name = "quit"
+    -- btn:setPosition(ccp(-self.bgSize.width*0.2, -self.bgSize.height*0.2))
+    -- btn:setOnClickListener(onButtonClicked)
+
+    -- btn = self:createButton("继续游戏")
+    -- self:addView(btn)
+    -- btn.name = "resume"
+    -- btn:setPosition(ccp(self.bgSize.width*0.2, -self.bgSize.height*0.2))
+    -- btn:setOnClickListener(onButtonClicked)
+end
+
+function ExitView:onTouchBegan(x, y)
+    if self:isTouchInside(x, y) == true and self.bTouchEnable_ then
+        self:setTouchedIn(true)
+        local pos = self:convertToNodeSpace(ccp(x,y))
+      --  print("pos : " .. pos.x .. " " .. pos.y)
+        local event = self:checkPosEvent(pos)
+        if event == 1 then
+           self.parentView:exitGame()
+           SoundManager:playEffect(INTERIM_SOUND.BUTTON)
+        
+        elseif event == 2 or event == 3 then
+           self.parentView:hideExitView()
+           SoundManager:playEffect(INTERIM_SOUND.BUTTON)
+        
+        end
+        return true
+    end
+    return false
+end
+
+function ExitView:checkPosEvent(pos)
+    local confirmBtnRect = CCRectMake(-208*self.dimens_.scale_
+        , -117*self.dimens_.scale_
+        , 158*self.dimens_.scale_
+        , 63*self.dimens_.scale_)
+    local resumeBtnRect = CCRectMake(30*self.dimens_.scale_
+        , -117*self.dimens_.scale_
+        , 158*self.dimens_.scale_
+        , 63*self.dimens_.scale_)
+    local cancelBtnRect = CCRectMake(188*self.dimens_.scale_
+        , 105*self.dimens_.scale_
+        , 75*self.dimens_.scale_
+        , 78*self.dimens_.scale_)
+    
+    if confirmBtnRect:containsPoint(pos) then
+        return 1
+    elseif resumeBtnRect:containsPoint(pos) then
+        return 2
+    elseif cancelBtnRect:containsPoint(pos) then
+        return 3
+    end
+    return 0
+end
+
+function ExitView:createButton(buttonText)
+    local btn = jj.ui.JJButton.new({
+        images = {
+            normal = "img/interim/common/blue_button02.png",   
+            highlight = "img/interim/common/yellow_button02.png",
+            scale9 = true
+        },
+        viewSize = CCSize(130, 50),
+        fontSize = 28,
+        color = ccc3(255, 255, 255),
+        text = buttonText,
+    })
+    btn:setAnchorPoint(ccp(0.5, 0.5))
+    return btn
+end
+
+function ExitView:refreshData()
+    local gameData = GameDataContainer:getGameData(INTERIM_MATCH_ID)
+    if gameData.property.isTourny == true then
+        self.torneyLabel:setVisible(true)
+        self.islandLabel:setVisible(false)
+    else
+        self.torneyLabel:setVisible(false)
+        self.islandLabel:setVisible(true)
+
+        local gameData = GameDataContainer:getGameData(INTERIM_MATCH_ID)
+        local exchangerate = gameData.exchangerate
+        local myCoin = gameData.myCoin
+        local gold = toint(myCoin/exchangerate)
+        local text = "返回大厅，将兑换" .. gold .. "金币"
+        self.islandLabel:setText(text)
+    end
+end
+
+return ExitView

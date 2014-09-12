@@ -1,0 +1,1 @@
+{"ware_name":"Poker银戒指","ico":"108766.jpg","ware_explain":"德州扑克牌技的象征物，拥有银戒指意味着已经步入了德州扑克高手的殿堂。","status":0,"merit_ware_intro":"","ware_introduction":"银戒指可以从大型比赛中获得，能获得银戒指说明牌技很高了","composite":0,"last_update":1402398024,"reward_explain":"","ware_id":359,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:17","reward":0}

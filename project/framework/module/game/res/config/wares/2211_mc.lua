@@ -1,0 +1,1 @@
+{"ware_name":"金质宝箱","ico":"94183.jpg","ware_explain":"据传，此箱为神秘仙人打牌输给凡人留下的宝箱，每个赢得它的人都能在合成炉从宝箱中中取出一件宝物。","status":0,"merit_ware_intro":"","ware_introduction":"","composite":0,"last_update":1398321254,"reward_explain":"","ware_id":2211,"mobile_ware_type":1,"ctime":"2012-11-08 12:04:29","reward":0}

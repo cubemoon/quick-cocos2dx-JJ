@@ -1,0 +1,311 @@
+local JJViewGroup = require("sdk.ui.JJViewGroup")
+local MatchInfoView = class("MatchInfoView", JJViewGroup)
+
+local JJListCell = import("sdk.ui.JJListCell")
+local ListCell = class("ListCell", JJListCell)
+local SegmentedButton = require("interim.ui.view.SegmentedButton")
+
+local offsetX = -15
+function ListCell:ctor(params, parentView, adapter)
+    ListCell.super.ctor(self, params)
+    self.TAG = "TableCell"
+    self.parentView = parentView
+    self.dimens_ = self.parentView.dimens_
+  --  print(self.TAG, "ctor()")
+    self.adapter = adapter
+    self.index = params.index
+    self.viewIndex = params.viewIndex
+    local matchData = StartedMatchManager:getMatch(INTERIM_MATCH_ID)
+    local playerInfo = matchData.gamePlayers_[self.index]
+    --print("playerInfo.nickName_********" .. playerInfo.nickName_)
+
+    local viewSize = CCSize(self.parentView.bgSize.width, self.dimens_:getDimens(30))
+    self:setViewSize(viewSize.width, viewSize.height)
+
+    --显示索引
+    local indexLabel = jj.ui.JJLabel.new({
+        fontSize = 15*self.dimens_.scale_,
+        color = ccc3(253, 210, 97),
+    })
+    indexLabel:setAnchorPoint(ccp(0,0.5))
+    indexLabel:setPosition(self.dimens_:getDimens(70), viewSize.height/2)
+    self:addView(indexLabel)
+    if self.viewIndex then
+        indexLabel:setText(tostring(self.index))
+    else
+        indexLabel:setText(self.adapter.awardTextArray[self.index].title)
+    end
+    
+   
+   --显示玩家昵称 或者 奖励信息
+    local secondLabel = jj.ui.JJLabel.new({
+        fontSize = 14*self.dimens_.scale_,
+        color = ccc3(253, 210, 97),
+        hAlign = ui.TEXT_ALIGN_LEFT,
+        singleLine = false,
+        viewSize = CCSizeMake(viewSize.width*0.85, viewSize.height),
+    })
+    secondLabel:setAnchorPoint(ccp(0,0.5))
+    secondLabel:setPosition(self.dimens_:getDimens(150), viewSize.height/2)
+    self:addView(secondLabel)
+    if self.viewIndex then
+        secondLabel:setText(playerInfo.nickName_)
+    else
+        secondLabel:setText(self.adapter.awardTextArray[self.index].value)
+    end
+
+    --显示玩家积分
+    local thirdLabel = jj.ui.JJLabel.new({
+        fontSize = 14*self.dimens_.scale_,
+        color = ccc3(253, 210, 97),
+        hAlign = ui.TEXT_ALIGN_LEFT,
+        singleLine = false,
+        viewSize = CCSizeMake(viewSize.width*0.85, viewSize.height),
+    })
+    thirdLabel:setAnchorPoint(ccp(0,0.5))
+    thirdLabel:setPosition(viewSize.width/2+self.dimens_:getDimens(130), viewSize.height/2)
+    self:addView(thirdLabel)
+    if self.viewIndex then
+       thirdLabel:setVisible(true)
+       thirdLabel:setText( playerInfo.score_ )
+    else
+       thirdLabel:setVisible(false)
+    end
+
+end
+
+function ListCell:onEnter()
+    self.super:onEnter()
+    
+end
+
+local ListAdapter = class("ListAdapter", require("sdk.ui.JJBaseAdapter"))
+function ListAdapter:ctor(parentView)
+    ListAdapter.super.ctor(self)
+    self.parentView = parentView
+    self.TAG = "ListAdapter"
+    self.count_ = 0
+    self.awardTextArray = {}
+    self:initAwardData()
+end
+
+function ListAdapter:getCount()
+    print("mAdapter:getCoun ")
+    local matchData = StartedMatchManager:getMatch(INTERIM_MATCH_ID)
+    if self.parentView.viewIndex then    -- 显示详细排名
+         if matchData.gamePlayers_ == nil then
+            print("matchData.gameplayers == nil")
+            return 0
+        else
+            print("matchData.gameplayers ~= nil")
+            return #matchData.gamePlayers_
+
+        end
+    else                                 --显示奖励方案
+        if self.awardTextArray == nil then
+            print("self.awardTextArray == nil")
+            return 0
+        else
+            return #self.awardTextArray
+        end
+    end
+   
+  
+end
+
+function ListAdapter:initAwardData()
+    self.awardTextArray = {}
+    --JJLog.i(TAG, "initAwardData IN self.matchData.tourneyId_ is ", self.matchData.tourneyId_)
+    local matchData = StartedMatchManager:getMatch(INTERIM_MATCH_ID)
+    local tourneyInfo = LobbyDataController:getTourneyInfoByTourneyId(matchData.tourneyId_)
+    if tourneyInfo == nil then
+        print("tourneyInfo == nil")
+    else
+        print("tourneyInfo == true")
+    end
+    JJLog.i(TAG, "initAwardData IN tourneyInfo is ", vardump(tourneyInfo))
+    if tourneyInfo and tourneyInfo.matchconfig_ then
+        local awardList = tourneyInfo.matchconfig_.awards
+        if awardList then
+            for k,v in pairs(awardList) do
+                if v then
+                    if v.position and v.position ~= "" then
+                        --print("V*****************" .. v.position .. v.desc)
+                        table.insert(self.awardTextArray, {title = "第" .. v.position.. "名", value = v.desc})
+                        print("self.awardTextArray" .. self.awardTextArray[k].title .. self.awardTextArray[k].value )
+                    end
+                end
+            end
+        end
+    end
+end
+
+function ListAdapter:removeItem(position)
+    if self.count_ > 0 then
+        self.count_ = self.count_ -1 
+        self:notifyDataSetChanged()
+    end
+    
+end
+
+function ListAdapter:getView(position)
+    JJLog.i(self.TAG, "getItem() postion="..position)
+    return ListCell.new({
+        index=position,
+        viewIndex = self.parentView.viewIndex
+    }, self.parentView ,self)
+end
+
+function MatchInfoView:ctor(parentView)
+    MatchInfoView.super.ctor(self, parentView)
+    self.parentView = parentView
+    self.positionConfig = parentView.positionConfig
+    self.dimens_ = parentView.dimens_
+    self.viewIndex = true      -- true 显示 详细排名 false 显示排名奖励
+    self:initView()
+end
+
+function MatchInfoView:initView()
+
+    function onButtonClicked(sender)
+       
+    end
+
+    local background = jj.ui.JJImage.new({
+         image = "img/interim/ui/pop_up_bg.png",
+      })
+    background:setAnchorPoint(ccp(0.5, 0.5))
+    background:setPosition(0, 0)
+    background:setScale(self.dimens_.scale_)
+    self:addView(background)
+   
+    self:setAnchorPoint(ccp(0.5, 0.5))
+
+    self.bgSize = CCSizeMake(background:getViewSize().width*self.dimens_.scale_,
+    background:getViewSize().height*self.dimens_.scale_)
+    
+    self.enableButton = SegmentedButton.new({
+        onImage = "img/interim/ui/rankDetail.png",
+        offImage = "img/interim/ui/rankPrize.png"})
+    self.enableButton.name = "enable"
+    self.enableButton.delegate = self
+    self.enableButton:setScale(self.dimens_.scale_)
+    self.enableButton:setAnchorPoint(ccp(0.5,0.5))
+    self.enableButton:setPosition(self.dimens_:getDimens(0), self.dimens_:getDimens(150))
+    self:addView(self.enableButton)
+
+    self.roomTitle = jj.ui.JJLabel.new({
+        fontSize = 25*self.dimens_.scale_,
+        color = ccc3(252, 217, 97),
+        text = "Room Title",
+    })
+    self.roomTitle:setAnchorPoint(ccp(0.5,0.5))
+    self.roomTitle:setPosition(self.dimens_:getDimens(0), self.dimens_:getDimens(95))
+    self:addView(self.roomTitle)
+
+     local separatorUp = jj.ui.JJImage.new({
+         image = "img/interim/ui/separator.png",
+      })
+    separatorUp:setAnchorPoint(ccp(0.5, 0.5))
+    separatorUp:setPosition(self.dimens_:getDimens(0), self.dimens_:getDimens(70))
+    separatorUp:setScale(1.2*self.dimens_.scale_)
+    self:addView(separatorUp)
+
+    self.indexLabel = jj.ui.JJLabel.new({
+        fontSize = 20*self.dimens_.scale_,
+        color = ccc3(252, 217, 97),
+        text = "排名",
+    })
+    self.indexLabel:setAnchorPoint(ccp(0.5,0.5))
+    self.indexLabel:setPosition(self.dimens_:getDimens(-200), self.dimens_:getDimens(50))
+    self:addView(self.indexLabel)
+
+    self.secondLabel = jj.ui.JJLabel.new({
+        fontSize = 20*self.dimens_.scale_,
+        color = ccc3(252, 217, 97),
+        text = "昵称",
+    })
+    self.secondLabel:setAnchorPoint(ccp(0.5,0.5))
+    self.secondLabel:setPosition(self.dimens_:getDimens(-100), self.dimens_:getDimens(50))
+    self:addView(self.secondLabel)
+
+    self.thirdLabel = jj.ui.JJLabel.new({
+        fontSize = 20*self.dimens_.scale_,
+        color = ccc3(252, 217, 97),
+        text = "积分",
+    })
+    self.thirdLabel:setAnchorPoint(ccp(0.5,0.5))
+    self.thirdLabel:setPosition(self.dimens_:getDimens(150), self.dimens_:getDimens(50))
+    self:addView(self.thirdLabel)
+
+    local separatorDown = jj.ui.JJImage.new({
+         image = "img/interim/ui/separator.png",
+      })
+    separatorDown:setAnchorPoint(ccp(0.5, 0.5))
+    separatorDown:setPosition(self.dimens_:getDimens(0), self.dimens_:getDimens(35))
+    separatorDown:setScale(1.2*self.dimens_.scale_)
+    self:addView(separatorDown)
+
+    self:setTouchEnable(true)
+
+    self:addListView()
+
+end
+
+function MatchInfoView:addListView()
+    self.listviewAdapter = ListAdapter.new(self)
+    self.listview = jj.ui.JJListView.new({
+        viewSize = CCSize(self.dimens_:getDimens(540),self.dimens_:getDimens(210) ),
+        adapter = self.listviewAdapter,
+    })
+    self.listview:setAnchorPoint(ccp(0.5,0.5))
+    self.listview:setId(22)
+    self.listview:setPosition(self.dimens_:getDimens(-15), self.dimens_:getDimens(-80))
+    self:addView(self.listview)
+end
+
+function MatchInfoView:removeListView()
+    self.listview:removeSelf(false)
+    self.listviewAdapter = nil
+    self.listview = nil
+end
+
+function MatchInfoView:refreshListView()
+    self.listview:refreshListView()
+end
+
+function MatchInfoView:onTouchBegan(x, y)
+    if self:isTouchInside(x, y) == true and self.bTouchEnable_ then
+        self:setTouchedIn(true)
+        local pos = self:convertToNodeSpace(ccp(x, y))
+      --  print("x y " .. pos.x .. " " .. pos.y)
+        if pos.x > 215*self.dimens_.scale_
+         and pos.y > 135*self.dimens_.scale_ then
+           self.parentView:hideMatchInfoView()
+           SoundManager:playEffect(INTERIM_SOUND.BUTTON)
+        
+        end
+        return true
+    end
+    return false
+end
+
+function MatchInfoView:show( roomTitle )
+    self:setVisible(true)
+    self.roomTitle:setText( roomTitle )
+    self.listview:refreshListView()
+end
+
+function MatchInfoView:onSegmentStatusChanged(button, value)
+    self.viewIndex = value  
+
+    self.thirdLabel:setVisible(value)
+    if value then
+        self.secondLabel:setText("昵称")
+    else
+        self.secondLabel:setText("奖励方案")  
+    end
+    self.listview:refreshListView()
+end
+
+return MatchInfoView

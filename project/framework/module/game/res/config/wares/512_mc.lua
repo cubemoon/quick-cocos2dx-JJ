@@ -1,0 +1,1 @@
+{"ware_name":"两张百元移动充值卡","ico":"37086.png","ware_explain":"可兑换两张移动百元手机充值卡。PS:本物品自获得之时起，于160小时后消失。请您抓紧时间兑奖。","status":0,"reward_explain":"您兑奖后，我们会在3个工作日直充您绑定的手机。","ware_introduction":"","ctime":"2012-04-09 16:24:17","merit_ware_intro":"兑奖请登录my.jj.cn-物品管理-点击兑换券-填写兑奖信息即可","last_update":1384582314,"ware_id":512,"mobile_ware_type":1,"composite":0,"reward":1}

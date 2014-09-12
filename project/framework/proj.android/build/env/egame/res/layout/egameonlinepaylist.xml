@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#dfdfdf"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#dfdfdf" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/egamewebfee_top"
+            android:gravity="center"
+            android:text="@string/egame_fee_title"
+            android:textColor="#fff"
+            android:textSize="14dip" />
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/egamewebfee_close" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#dfdfdf"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/smspay"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:background="@drawable/egamewebfee_list_selector"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dip"
+                android:text="@string/egame_fee_tel_fare"
+                android:textColor="#000000"
+                android:textSize="14dip" />
+
+            <Button
+                android:id="@+id/szpay"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:background="@drawable/egamewebfee_list_selector"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dip"
+                android:text="@string/egame_fee_szpay"
+                android:textColor="#000000"
+                android:textSize="14dip" />
+
+            <Button
+                android:id="@+id/alipay"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:background="@drawable/egamewebfee_list_selector"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dip"
+                android:text="@string/egame_fee_alipay"
+                android:textColor="#000000"
+                android:textSize="14dip" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

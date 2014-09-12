@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 这个文件只是用于给 aapt 生成 R.java 时指示包路径 -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="cn.jj.base">
+</manifest> 

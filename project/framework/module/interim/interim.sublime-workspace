@@ -1,0 +1,2353 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Pl",
+				"PlayView	."
+			],
+			[
+				"else",
+				"else	else"
+			],
+			[
+				"call",
+				"callFunc	."
+			],
+			[
+				"ccfade",
+				"CCFadeOut:create(d)"
+			],
+			[
+				"stopall",
+				"stopAllActions()	JJView"
+			],
+			[
+				"stopa",
+				"stopAnimation()	CCDirector"
+			],
+			[
+				"play",
+				"playInfo	."
+			],
+			[
+				"getmy",
+				"getMyPlayerInfo()	InterimData"
+			],
+			[
+				"alertstop",
+				"alertStopAnimation()	PlayerView"
+			],
+			[
+				"animate",
+				"CCAnimate:create(pAnimation)"
+			],
+			[
+				"standba",
+				"self.standBar	."
+			],
+			[
+				"settrust",
+				"setTrustAndAutoByButtonVisible(visible)	UIView"
+			],
+			[
+				"shot",
+				"showToggleBar()	InterimPlayScene"
+			],
+			[
+				"elseif",
+				"elseif	elseif"
+			],
+			[
+				"hideemo",
+				"hideEmoteView()	UIView"
+			],
+			[
+				"unsche",
+				"unscheduleAll()	CCScheduler"
+			],
+			[
+				"ccarray",
+				"CCArray:create()"
+			],
+			[
+				"ccmove",
+				"CCMoveBy:create(duration, deltaPosition)"
+			],
+			[
+				"ccmoveby",
+				"cc.MoveBy"
+			],
+			[
+				"IN",
+				"INTERIM_POPVIEW_NONE	."
+			],
+			[
+				"rankdeta",
+				"rankDetailViewHide"
+			],
+			[
+				"getvi",
+				"getViewSize()	CCScrollView"
+			],
+			[
+				"getposi",
+				"getPositionX()	UIStretch"
+			],
+			[
+				"ccrect",
+				"cc.RectMake"
+			],
+			[
+				"bou",
+				"boundingBox()	CCNode"
+			],
+			[
+				"autobuy",
+				"autoBuyMax"
+			],
+			[
+				"setboo",
+				"setBoolForKey(pKey, value)	CCUserDefault"
+			],
+			[
+				"getboo",
+				"getBoolForKey(pKey)	CCUserDefault"
+			],
+			[
+				"Interim",
+				"InterimPlayScene	."
+			],
+			[
+				"class",
+				"class(classname, super)"
+			],
+			[
+				"Interimpla",
+				"InterimPlaySceneController	."
+			],
+			[
+				"getcont",
+				"getContentSize()	CCDisplayManager"
+			],
+			[
+				"ni",
+				"nickName	."
+			],
+			[
+				"left",
+				"leftchip	."
+			],
+			[
+				"game",
+				"gameData	."
+			],
+			[
+				"ran",
+				"rankText	."
+			],
+			[
+				"aw",
+				"awardData	."
+			],
+			[
+				"standby",
+				"self.standByTipLabel	."
+			],
+			[
+				"userid",
+				"userid	."
+			],
+			[
+				"自动",
+				"自动补码至买入筹码数"
+			],
+			[
+				"setstrig",
+				"setStringForKey(pKey, value)	CCUserDefault"
+			],
+			[
+				"getstr",
+				"getStringForKey(pKey)	CCUserDefault"
+			],
+			[
+				"onbutto",
+				"onMenuButtonClicked(tag)	UIView"
+			],
+			[
+				"addlis",
+				"addListView()	LotteryDetail"
+			],
+			[
+				"CCarray",
+				"CCArray:create()"
+			],
+			[
+				"dela",
+				"delay	."
+			],
+			[
+				"ui",
+				"ui.TEXT_ALIGN_LEFT"
+			],
+			[
+				"uiali",
+				"ui.TEXT_ALIGN_CENTER"
+			],
+			[
+				"setali",
+				"setAlignment(alignment)	CCLabelBMFont"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "ui/view/SeatView.lua",
+			"settings":
+			{
+				"buffer_size": 38580,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "ui/view/PlayView.lua",
+			"settings":
+			{
+				"buffer_size": 31424,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "ui/view/PlayerView.lua",
+			"settings":
+			{
+				"buffer_size": 10888,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "ui/scene/InterimPlayScene.lua",
+			"settings":
+			{
+				"buffer_size": 19779,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "ui/view/UIView.lua",
+			"settings":
+			{
+				"buffer_size": 64802,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "ui/controller/InterimPlaySceneController.lua",
+			"settings":
+			{
+				"buffer_size": 21418,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/quick-cocos2d-x/project/framework/main.bat",
+			"settings":
+			{
+				"buffer_size": 226,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/quick-cocos2d-x-back/project/framework/module/game/def/JJGameDefine.lua",
+			"settings":
+			{
+				"buffer_size": 5058,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/quick-cocos2d-x-back/project/framework/module/config.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/controller/InterimPlaySceneController.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/UIView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/data/InterimData.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/PlayerInfoView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/PlayView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/scene/InterimPlayScene.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/CardView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/HelpView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/BuyChipView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/MatchInfoView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/RankView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/GameTip.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/msg/MatchMsgGameController.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/SeatView.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/sdk/ui/JJButton.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/CoinBet.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/LotteryView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/game/def/JJGameDefine.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/CardGroup.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/threecard/ui/view/GameTip.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/util/PositionConfig.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/DrawCardView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/game/ui/view/BottomView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/res/img/interim/ui/pool_num.fnt",
+		"/E/卡当/卡当手机游戏中倍数/App Icon [Squared]/cardTipFont.fnt",
+		"/D/quick-cocos2d-x/project/framework/module/interim/util/AnimationFactory.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/res/img/interim/animate/sameStraightAnim0.plist",
+		"/D/quick-cocos2d-x/project/framework/module/interim/res/img/interim/animate/KainSameStraight0.plist",
+		"/D/quick-cocos2d-x/project/framework/module/interim/res/img/interim/animate/GXZDJ0.plist",
+		"/D/quick-cocos2d-x/project/framework/module/interim/res/img/interim/animate/hit_pillar.plist",
+		"/E/卡当/新需求及图/桌面/FourSame/Export/FourSame/FourSame0.plist",
+		"/D/quick-cocos2d-x/project/framework/module/interim/res/img/interim/animate/FourSame0.plist",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/HelperSysTime.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/InterimRoundWaitView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/game/controller/MainController.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/msg/InterimMsgController.lua",
+		"/D/quick-cocos2d-x/project/framework/module/sdk/debug/JJLog.lua",
+		"/D/quick-cocos2d-x/project/framework/module/sdk/ui/JJView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/PlayerView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/sdk/scenestack/SceneBase.lua",
+		"/E/files/JJFramework.1208.20140905/JJFramework.1208.20140905/module/sdk/ui/JJView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/data/InterimPlayerInfo.lua",
+		"/D/0904/SeatView.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/sdk/debug/JJLog.lua",
+		"/D/quick-cocos2d-x/project/framework/module/sdk/connect/ConnectManager.lua",
+		"/D/quick-cocos2d-x/project/framework/module/game/ui/controller/PlaySceneController.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/sdk/scenestack/SceneBase.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/game/ui/controller/PlaySceneController.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/game/controller/MainController.lua",
+		"/D/projects/niuniu/ui/scene/NiuNiuPlayScene.lua",
+		"/D/projects/niuniu/ui/controller/NiuNiuPlaySceneController.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/util/InterimUtilDefine.lua",
+		"/D/framework-bak/module/sdk/connect/ConnectManager.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/sdk/connect/ConnectManager.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/PortraitView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/SegmentedButton.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/SwitchButton.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/TrustSettingView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/SettingView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/MaskView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/LotteryDetail.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/ExitView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/EmoteView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/AlertView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/interim.sublime-workspace",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/RankDetailView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/MenuView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/MatchAwardView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/InterimUserLavel.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/controller/InterimSwitchToGameSceneController.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ProjectApp.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/data/interimTitleDefine.lua",
+		"/D/JJSDK/JJSDK_V1203_20140822/JJSDK_V1203_20140822/module/game/def/JJGameDefine.lua",
+		"/D/quick-cocos2d-x/project/framework/scripts/main.lua",
+		"/D/quick-cocos2d-x/project/framework/module/config.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/BackgroundView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/util/InterimDef.lua",
+		"/D/quick-cocos2d-x/project/framework/module/game/msg/MatchMsgController.lua",
+		"/D/quick-cocos2d-x/project/framework/module/game/ui/view/DiplomaView.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/game/ui/scene/JJGameSceneBase.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/game/ui/controller/JJGameSceneController.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/threecard/ui/view/ThreeCardPlayView.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/threecard/ui/controller/ThreeCardPlaySceneController.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/MessageView.lua",
+		"/D/quick-cocos2d-x/project/framework/proj.android/assets/module/game/ui/controller/PlaySceneController.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/AwardView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/view/PoolView.lua",
+		"/D/projects/interim/ui/view/PlayerView.lua",
+		"/D/quick-cocos2d-x/project/framework/proj.android/assets/module/interim/ui/view/UIView.lua",
+		"/D/quick-cocos2d-x/project/framework/proj.android/assets/module/interim/ui/scene/InterimPlayScene.lua",
+		"/D/quick-cocos2d-x/project/framework/module/game/controller/TourneyController.lua",
+		"/D/quick-cocos2d-x/project/framework/proj.android/assets/module/interim/ui/view/SeatView.lua",
+		"/D/quick-cocos2d-x/project/framework/proj.android/assets/module/interim/data/InterimData.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/sdk/ui/JJDialogBase.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/util/InterimUtil.lua",
+		"/D/quick-cocos2d-x/project/framework/module/game/ui/controller/SettingsSceneController.lua",
+		"/D/quick-cocos2d-x/project/framework/module/game/ui/scene/SettingsScene.lua",
+		"/D/quick-cocos2d-x/project/framework/module/game/data/config/PayConfigManager.lua",
+		"/D/quick-cocos2d-x/project/framework/module/sdk/JJSDK.lua",
+		"/D/quick-cocos2d-x-2.2.5/samples/coinflip/scripts/app/views/BubbleButton.lua",
+		"/D/quick-cocos2d-x-2.2.5/samples/coinflip/scripts/app/scenes/MenuScene.lua",
+		"/D/quick-cocos2d-x/project/framework/proj.android/obj/local/armeabi/objs-debug/jj_static/socket/JJSocketRequest.o.d",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/InterimDimens.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/game/ui/JJDimens.lua",
+		"/D/quick-cocos2d-x/project/framework/module/game/ui/controller/ChargeDetailSceneController.lua",
+		"/D/quick-cocos2d-x/project/framework/module/game/def/JJSceneDef.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/game/ui/controller/ChargeSelectSceneController.lua",
+		"/D/quick-cocos2d-x/project/framework/module/game/ui/controller/MainSceneController.lua",
+		"/D/quick-cocos2d-x/project/framework/module/sdk/scenestack/SceneStack.lua",
+		"/D/projects/protoc/TKMobile.proto",
+		"/D/quick-cocos2d-x-2.2.5/framework/cc/init.lua",
+		"/D/quick-cocos2d-x/project/framework/module/sdk/init.lua",
+		"/D/quick-cocos2d-x-2.2.5/framework/init.lua",
+		"/D/quick-cocos2d-x-2.2.5/framework/shortcodes.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/threecard/msg/MatchMsgGameController.lua",
+		"/D/quick-cocos2d-x/project/framework/module/game/pb/MatchMsg.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/threecard/ui/view/ChangeTable.lua",
+		"/D/quick-cocos2d-x/project/framework/proj.android/assets/module/game/ui/view/ZonesView.lua",
+		"/D/quick-cocos2d-x/project/framework/module/interim/ui/InterimTheme.lua",
+		"/D/quick-cocos2d-x/project/framework/module/game/data/game/GameData.lua",
+		"/D/projects/threecard/msg/MatchMsgGameController.lua",
+		"/D/projects/threecard/util/ThreeCardUtil.lua",
+		"/D/projects/threecard/ui/view/PlayerViewInfo.lua",
+		"/D/projects/threecard/ui/view/ThreeCardPlayView.lua",
+		"/D/projects/poker/ui/view/PlayerViewInfo.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/game/def/JJGameDefine.lua",
+		"/D/quick-cocos2d-x-back/project/framework/module/game/pb/MatchMsg.lua"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 105.0,
+		"where_history":
+		[
+			"D:\\quick-cocos2d-x\\project\\framework\\module\\",
+			"D:\\quick-cocos2d-x-back\\project\\framework\\module\\",
+			"D:\\quick-cocos2d-x\\project\\framework\\module\\",
+			"D:\\quick-cocos2d-x\\project\\framework\\module\\interim",
+			"D:\\quick-cocos2d-x\\project\\framework\\module",
+			"D:\\quick-cocos2d-x\\project\\framework\\module\\interim",
+			"D:\\quick-cocos2d-x\\project\\framework",
+			"D:\\quick-cocos2d-x-back\\project\\framework",
+			"D:\\quick-cocos2d-x\\project\\framework",
+			"D:\\quick-cocos2d-x-back\\project\\framework",
+			"D:\\quick-cocos2d-x\\project\\framework",
+			"D:\\projects\\threecard",
+			"D:\\quick-cocos2d-x\\project\\framework",
+			"D:\\projects\\poker",
+			"D:\\quick-cocos2d-x-back\\project\\framework\\module",
+			"D:\\quick-cocos2d-x\\project\\framework\\module",
+			"D:\\quick-cocos2d-x-back\\project\\framework\\module",
+			"D:\\quick-cocos2d-x\\project\\framework\\module",
+			"D:\\quick-cocos2d-x-back\\project\\framework\\module",
+			"D:\\quick-cocos2d-x\\project\\framework\\module",
+			"D:\\quick-cocos2d-x-back\\project\\framework\\module",
+			"D:\\quick-cocos2d-x\\project\\framework\\module",
+			"D:\\quick-cocos2d-x-back\\project\\framework\\module",
+			"D:\\quick-cocos2d-x\\project\\framework\\module",
+			"D:\\quick-cocos2d-x-back\\project\\framework\\module",
+			"D:\\quick-cocos2d-x\\project\\framework\\module",
+			"D:\\projects\\niuniu",
+			"D:\\quick-cocos2d-x\\project\\framework\\module",
+			"D:\\quick-cocos2d-x-back\\project\\framework\\module",
+			"D:\\quick-cocos2d-x\\project\\framework\\module",
+			"D:\\quick-cocos2d-x-back\\project\\framework\\module",
+			"D:\\quick-cocos2d-x\\project\\framework\\module",
+			"D:\\quick-cocos2d-x-back\\project\\framework\\module",
+			"D:\\quick-cocos2d-x-back\\project\\framework\\modul",
+			"D:\\quick-cocos2d-x\\project\\framework\\module,D:\\projects\\threecard,D:\\projects",
+			"D:\\quick-cocos2d-x\\project\\framework\\module,D:\\projects\\threecard",
+			"D:\\quick-cocos2d-x\\project\\framework\\module",
+			"D:\\projects\\lordunion",
+			"D:\\quick-cocos2d-x\\project\\framework",
+			"D:\\quick-cocos2d-x-back\\project\\framework\\module",
+			"D:\\quick-cocos2d-x\\project\\framework,D:\\projects\\threecard",
+			"D:\\quick-cocos2d-x\\project\\framework",
+			"D:\\quick-cocos2d-x-back\\project\\framework\\module",
+			"D:\\quick-cocos2d-x\\project\\framework",
+			"D:\\quick-cocos2d-x-back\\project\\framework\\module",
+			"D:\\quick-cocos2d-x-back\\project\\framework\\module\\threecard",
+			"D:\\quick-cocos2d-x-back\\project\\framework\\module",
+			"D:\\quick-cocos2d-x\\project\\framework\\",
+			"D:\\quick-cocos2d-x\\project\\framework\\module\\sdk",
+			"D:\\quick-cocos2d-x\\project\\framework",
+			"D:\\projects",
+			"D:\\quick-cocos2d-x\\project\\framework,D:\\projects",
+			"D:\\quick-cocos2d-x\\project\\framework",
+			"",
+			"D:\\quick-cocos2d-x\\project\\framework\\module\\interim",
+			"",
+			"D:\\quick-cocos2d-x\\project",
+			"",
+			"D:\\quick-cocos2d-x\\project,,D:\\quick-cocos2d-x\\project\\hall,D:\\quick-cocos2d-x\\project\\jjlobby",
+			"D:\\quick-cocos2d-x\\project,,D:\\quick-cocos2d-x\\project\\hall",
+			"D:\\quick-cocos2d-x\\project",
+			"",
+			"D:\\quick-cocos2d-x\\project\\jjlobby\\scripts\\interim,D:\\quick-cocos2d-x\\project\\jjlobby\\scripts",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"maxButton",
+			"max",
+			"dealingCard",
+			"autoFold",
+			"myTurnFinished",
+			"refreshData",
+			"portraitImage",
+			"JJLog.i",
+			"p25Label",
+			"p25Button",
+			"50percent",
+			"p50Button",
+			"p25Button",
+			"25percent",
+			"showMatchAward",
+			"matchId_",
+			"JJLog.i",
+			"updatePlayerDisplay",
+			"handlePushMatchAward",
+			"JJLog.i",
+			"updatePlayerDisplay",
+			"minButton",
+			"p50Button",
+			"max",
+			"standFlag",
+			"self.playView:autoFold()",
+			"autoFold",
+			"playView",
+			"scheduler",
+			"prompt.png",
+			"prompt",
+			"pool_num",
+			"coinLabel",
+			"JJLabelBMFont",
+			"refreshRankInfo",
+			"autoFold",
+			"updatePlayerDisplay",
+			"titleLabel",
+			"setTrustAndAutoByButtonVisible",
+			"showToggleBar",
+			"showChangeAndTrustButton",
+			"showFoldCard",
+			"56",
+			"fold",
+			"宝箱",
+			"宝藏",
+			"coinLabel",
+			"buyChip",
+			"standByTipLabel",
+			"bDelegate",
+			"handleAutoFoldAndTrust",
+			"autoFoldButton",
+			"AUTO_FOLD_CHECKBOX_ID",
+			"autoFoldButton",
+			"autoFoldLabel",
+			"autoFoldButton",
+			"showNormalHelp",
+			"helpView",
+			"showIslandHelp",
+			"normalHelp",
+			"titleLabel",
+			"showNormalHelp",
+			"playComeOnAnim",
+			"playSmallPrizeAnim",
+			"hideFlash",
+			"playCourageAnim",
+			"playFivesamestraightAnim",
+			"handCard",
+			"mod",
+			"INTERIM_CARD_IMAGE",
+			"handCard",
+			"CCCallFunc",
+			"AAAA",
+			"ComeOnAnim",
+			"playAJFourSame",
+			"kabz",
+			"playAnimationOnce",
+			"AJFourSame",
+			"hitIcon",
+			"AJFourSame",
+			"000",
+			"0000",
+			"000",
+			"0000",
+			"000",
+			"0000",
+			"SmallPrize",
+			"hitIcon",
+			"SmallPrize",
+			"getResultIconPos",
+			"hitIcon",
+			"FivesamestraightIcon",
+			"hitIcon",
+			"GXZDJ0",
+			"fold",
+			"dealCardEnd",
+			"property",
+			"CCCallFuncN",
+			"seatPositionTable",
+			"CCCallFunc",
+			"fastSitFlag",
+			"scheduler",
+			"unschedule",
+			"schedule",
+			"scheduler",
+			"schedule",
+			"scheduler",
+			"unschedule",
+			"schedule",
+			"scheduler",
+			"schedule",
+			"unschedule",
+			"schedule",
+			"scheduler",
+			"askHoldMsg",
+			"reset",
+			"handleInitCardAck",
+			"coinData",
+			"dealMiddleCardFinished",
+			"handleCoinAck",
+			"coinData",
+			"updatePlayerDisplay",
+			"cardCount",
+			"gameData.coinData",
+			"tkInfo",
+			"playerInfo",
+			"allPlayerInfo",
+			"JJLog.i"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "ui/view/SeatView.lua",
+					"settings":
+					{
+						"buffer_size": 38580,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10075,
+								10075
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"function_name_status_row": 327,
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 6850.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "ui/view/PlayView.lua",
+					"settings":
+					{
+						"buffer_size": 31424,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								28991,
+								28991
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"function_name_status_row": 1047,
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 23617.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "ui/view/PlayerView.lua",
+					"settings":
+					{
+						"buffer_size": 10888,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4893,
+								4893
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"function_name_status_row": 161,
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3044.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "ui/scene/InterimPlayScene.lua",
+					"settings":
+					{
+						"buffer_size": 19779,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4053,
+								4053
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"function_name_status_row": 151,
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2756.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "ui/view/UIView.lua",
+					"settings":
+					{
+						"buffer_size": 64802,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40444,
+								40444
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"function_name_status_row": 1118,
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 25434.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "ui/controller/InterimPlaySceneController.lua",
+					"settings":
+					{
+						"buffer_size": 21418,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21416,
+								21416
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"function_name_status_row": 624,
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 13336.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/D/quick-cocos2d-x/project/framework/main.bat",
+					"settings":
+					{
+						"buffer_size": 226,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								74,
+								92
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"function_name_status_row": 1,
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Batch File/Batch File.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/D/quick-cocos2d-x-back/project/framework/module/game/def/JJGameDefine.lua",
+					"settings":
+					{
+						"buffer_size": 5058,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								755,
+								759
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"function_name_status_row": 19,
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 73.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 124.0
+	},
+	"output.find_results":
+	{
+		"height": 154.0
+	},
+	"replace":
+	{
+		"height": 74.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"jjgamde",
+				"module/game/def/JJGameDefine.lua"
+			],
+			[
+				"jjbu",
+				"module/sdk/ui/JJButton.lua"
+			],
+			[
+				"jjgamede",
+				"framework/module/game/def/JJGameDefine.lua"
+			],
+			[
+				"jjview",
+				"framework/module/sdk/ui/JJView.lua"
+			],
+			[
+				"scenebase",
+				"framework/module/sdk/scenestack/SceneBase.lua"
+			],
+			[
+				"jjlog",
+				"framework/module/sdk/debug/JJLog.lua"
+			],
+			[
+				"mainco",
+				"module/game/controller/MainController.lua"
+			],
+			[
+				"playscene",
+				"module/game/ui/controller/PlaySceneController.lua"
+			],
+			[
+				"plasce",
+				"module/game/ui/controller/PlaySceneController.lua"
+			],
+			[
+				"conne",
+				"framework/module/sdk/connect/ConnectManager.lua"
+			],
+			[
+				"jjlo",
+				"framework/module/sdk/debug/JJLog.lua"
+			],
+			[
+				"conn",
+				"module/sdk/connect/ConnectManager.lua"
+			],
+			[
+				"sceneba",
+				"module/sdk/scenestack/SceneBase.lua"
+			],
+			[
+				"jjgamescene",
+				"module/game/ui/scene/JJGameSceneBase.lua"
+			],
+			[
+				"niuniup",
+				"projects/niuniu/ui/controller/NiuNiuPlaySceneController.lua"
+			],
+			[
+				"playscenecontroll",
+				"framework/module/game/ui/controller/PlaySceneController.lua"
+			],
+			[
+				"jjgamesce",
+				"module/game/ui/controller/JJGameSceneController.lua"
+			],
+			[
+				"playse",
+				"module/game/ui/controller/PlaySceneController.lua"
+			],
+			[
+				"playscenecon",
+				"framework/module/game/ui/controller/PlaySceneController.lua"
+			],
+			[
+				"jjdialoba",
+				"module/sdk/ui/JJDialogBase.lua"
+			],
+			[
+				"jjsocke",
+				"framework/proj.android/obj/local/armeabi/objs-debug/jj_static/socket/JJSocketRequest.o.d"
+			],
+			[
+				"chargeselectscenecontroller",
+				"module/game/ui/controller/ChargeSelectSceneController.lua"
+			],
+			[
+				"jjdimes",
+				"module/game/ui/JJDimens.lua"
+			],
+			[
+				"tkmo",
+				"projects/protoc/TKMobile.proto"
+			],
+			[
+				"gameda",
+				"framework/module/game/data/game/GameData.lua"
+			],
+			[
+				"jjgamedef",
+				"module/game/def/JJGameDefine.lua"
+			],
+			[
+				"jjcheckb",
+				"framework/module/sdk/ui/JJCheckBox.lua"
+			],
+			[
+				"util",
+				"module/sdk/util/Util.lua"
+			],
+			[
+				"resignupdialog",
+				"module/game/ui/view/ReSignupDialog.lua"
+			],
+			[
+				"jjdialogbase",
+				"module/sdk/ui/JJDialogBase.lua"
+			],
+			[
+				"alertdialog",
+				"module/game/ui/view/AlertDialog.lua"
+			],
+			[
+				"playscenecontroller",
+				"framework/module/game/ui/controller/PlaySceneController.lua"
+			],
+			[
+				"luadatafile",
+				"module/sdk/file/LuaDataFile.lua"
+			],
+			[
+				"jjgamescenebase",
+				"module/game/ui/scene/JJGameSceneBase.lua"
+			],
+			[
+				"",
+				"framework/module/game/ui/controller/PlaySceneController.lua"
+			],
+			[
+				"playsce",
+				"framework/module/game/ui/controller/PlaySceneController.lua"
+			],
+			[
+				"jjgamedefine",
+				"framework/module/game/def/JJGameDefine.lua"
+			],
+			[
+				"jjlabel",
+				"framework/module/sdk/ui/JJLabel.lua"
+			],
+			[
+				"jjbutt",
+				"module/sdk/ui/JJButton.lua"
+			],
+			[
+				"luadata",
+				"module/sdk/file/LuaDataFile.lua"
+			],
+			[
+				"playsc",
+				"framework/module/game/ui/controller/PlaySceneController.lua"
+			],
+			[
+				"gamede",
+				"framework/module/game/def/JJGameDefine.lua"
+			],
+			[
+				"jjcheckbox",
+				"framework/module/sdk/ui/JJCheckBox.lua"
+			],
+			[
+				"growwareiddef",
+				"framework/module/game/def/GrowWareIdDef.lua"
+			],
+			[
+				"majscper",
+				"projects/mahjongsc/ui/controller/MahjongSCPersonalCenterHelpSceneController.lua"
+			],
+			[
+				"jjviewgro",
+				"framework/module/sdk/ui/JJViewGroup.lua"
+			],
+			[
+				"progress",
+				"projects/hall/ui/view/HallGameProgressView.lua"
+			],
+			[
+				"jjlab",
+				"framework/module/sdk/ui/JJLabel.lua"
+			],
+			[
+				"tou",
+				"framework/module/game/controller/TourneyController.lua"
+			],
+			[
+				"startedmatchmanager",
+				"framework/module/game/data/model/StartedMatchManager.lua"
+			],
+			[
+				"interpla",
+				"framework/module/interim/ui/controller/InterimPlaySceneController.lua"
+			],
+			[
+				"gamedat",
+				"framework/module/game/data/game/GameData.lua"
+			],
+			[
+				"jjcheck",
+				"framework/module/sdk/ui/JJCheckBox.lua"
+			],
+			[
+				"jjcheckbo",
+				"framework/module/sdk/ui/JJCheckBox.lua"
+			],
+			[
+				"jjche",
+				"framework/module/sdk/ui/JJCheckBox.lua"
+			],
+			[
+				"jjchekbox",
+				"framework/module/sdk/ui/JJCheckBox.lua"
+			],
+			[
+				"basea",
+				"framework/module/sdk/ui/JJBaseAdapter.lua"
+			],
+			[
+				"jjlistview",
+				"framework/module/sdk/ui/JJListView.lua"
+			],
+			[
+				"jjlis",
+				"framework/module/sdk/ui/JJListView.lua"
+			],
+			[
+				"settingscene",
+				"framework/module/game/ui/scene/SettingsScene.lua"
+			],
+			[
+				"jjbase",
+				"framework/module/sdk/ui/JJBaseAdapter.lua"
+			],
+			[
+				"gamedatacontainer",
+				"framework/module/game/data/game/GameDataContainer.lua"
+			],
+			[
+				"jjlabe",
+				"module/sdk/ui/JJLabel.lua"
+			],
+			[
+				"interimplaysceneco",
+				"projects/interim/ui/controller/InterimPlaySceneController.lua"
+			],
+			[
+				"matchawardda",
+				"framework/module/game/data/match/MatchAwardData.lua"
+			],
+			[
+				"pklordislandwait",
+				"projects/lordunion/ui/view/PkLordIslandWait.lua"
+			],
+			[
+				"jjl",
+				"module/sdk/debug/JJLog.lua"
+			],
+			[
+				"messa",
+				"module/sdk/message/Message.lua"
+			],
+			[
+				"matchmsg",
+				"module/game/msg/MatchMsgController.lua"
+			],
+			[
+				"uiview",
+				"module/interim/ui/view/UIView.lua"
+			],
+			[
+				"scenecon",
+				"module/sdk/scenestack/SceneController.lua"
+			],
+			[
+				"plascenecon",
+				"module/game/ui/controller/PlaySceneController.lua"
+			],
+			[
+				"plascene",
+				"proj.android/assets/module/game/ui/scene/PlayScene.lua"
+			],
+			[
+				"scenecontroller",
+				"module/sdk/scenestack/SceneController.lua"
+			],
+			[
+				"jjgamescenecontroller",
+				"module/game/ui/controller/JJGameSceneController.lua"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 363.0,
+	"status_bar_visible": true
+}

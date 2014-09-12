@@ -1,0 +1,1 @@
+{"ware_name":"50000PK参赛券","ico":"108686.jpg","ware_explain":"使用此券，可以报名JJ平台上50000PK等高级锦标赛。","status":0,"merit_ware_intro":"","ware_introduction":"可以在各游戏的高级比赛可获得","composite":0,"last_update":1402389748,"reward_explain":"","ware_id":1475,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:19","reward":0}

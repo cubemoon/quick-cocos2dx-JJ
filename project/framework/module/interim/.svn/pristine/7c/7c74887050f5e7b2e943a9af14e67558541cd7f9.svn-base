@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+body,td,th {
+	color: rgb(255,255,255);
+}
+</style>
+</head>
+
+<body>
+<p><strong>概述</strong>：</p>
+<p>卡当是特别容易上手的游戏。每人先发2张牌，你可以要第三张牌，如果第三张牌的点数在两张牌之间，则赢得比赛，获得底池</p>
+<p><strong>赢输情况</strong>：</p>
+<p><img src="images/zhong.png" width="94" height="38"  alt=""/>普通卡中</p>
+<p><img src="images/kain.png" width="94" height="38"  alt=""/>卡中顺子</p>
+<p><img src="images/kbz.png" width="94" height="38"  alt=""/>卡中豹子</p>
+<p><img src="images/kth.png" width="94" height="38"  alt=""/>卡中同花</p>
+<p><img src="images/kf.png" width="94" height="38"  alt=""/>没卡中</p>
+<p><img src="images/zz.png" width="94" height="38"  alt=""/>没卡中</p>
+<p><img src="images/qi.png" width="94" height="38"  alt=""/>无法卡</p>
+<p><strong>具体规则</strong>：</p>
+<p><STRONG>牌库：</STRONG>1副牌，52张，不带大小王；</p>
+<p><STRONG>人数：</STRONG>每桌2至6人游戏；</p>
+<p><STRONG>底注：</STRONG>每局发底牌之前，所有人需要先下1倍基数的底注。</p>
+<p><STRONG>盲注</STRONG>：坐下游戏的第一局需向桌面投放一定的数量的积分，分为以下两种：</p>
+<p>1、普通新手盲注：当桌上筹码清空，新加入比赛</p>
+<p>2、2倍普通前注：当桌面上筹码低于5倍基数时</p>
+<p><STRONG>宝藏：</STRONG>每局游戏在投注底注的时候，会有一定的数额进入彩池。</p>
+<p><STRONG>下注：</STRONG>每人发两张底牌（自己直接可以看到这两张牌），从Dealer位置的下家开始，逆时针轮流决定下注或弃牌。 </p>
+<p>Dealer位置每副牌逆时针依次轮换。</p>
+<p><STRONG>翻牌：</STRONG>决定下注，并获得翻牌的过程，称为：翻牌。翻牌的结果有可能是：卡中、卡飞、撞柱、卡当、卡豹子、卡同花。</p>
+<p><STRONG>底池：</STRONG>一个游戏桌建立之后，玩家所有的底注和下注都进入底池，底池与游戏桌绑定，若所有玩家都离开，底池中还有剩余筹码，则当另外的玩家再参与到此桌游戏时，桌面筹码自动清空并进入彩池。</p>
+<p> 注：当桌面还有剩余筹码，当桌面只剩一个玩家，而其他玩家都离开时，桌面筹码将全部分配给最后一个玩家；但需要有其他玩家进入时，筹码才会自动分配！</p>
+<p><STRONG>挖宝：</STRONG>比赛场地的彩池会随选手的参与度而逐渐增加，满足下述4种条件即可挖宝成功。</p>
+<p><STRONG>普通四条：</STRONG>若底牌为对子，并且翻牌中豹子，则进入挖宝藏的下一个环节：在剩余牌堆中抽出1张牌，若形成四条则中2%彩金。</p>
+<p><STRONG>A</STRONG><STRONG>四条</STRONG><STRONG>/J</STRONG><STRONG>四条</STRONG>：若挖宝中得的是A或者J的四条，将会获得10%彩金。</p>
+<p><STRONG>同花顺：</STRONG>若底牌为相同花色，数字之差为2~4，并且卡当卡中同花色的牌成为三张的同花牌，则进入挖宝环节：在剩余牌堆中抽出一张牌，满足条件后方可再抽一张牌，若形成5张的同花顺，则中25%的彩金；若形成4张同花顺，则中2%的彩金。</p>
+<p><STRONG>游戏结</STRONG><STRONG>束：</STRONG>1、某玩家将底池赢空；2、所有玩家均完成弃牌或下注。</p>
+</body>
+</html>

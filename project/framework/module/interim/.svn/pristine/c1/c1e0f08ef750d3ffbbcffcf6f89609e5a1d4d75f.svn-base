@@ -1,0 +1,92 @@
+
+local PositionConfig = class("PositionConfig")
+
+function PositionConfig:ctor(controller)
+	self.theme_ = controller.theme_
+    self.dimens_ = controller.dimens_
+
+    self.rankView = ccp(self.dimens_:getDimens(8), self.dimens_.top - self.dimens_:getDimens(67))
+    self.rankDetailView = ccp(self.dimens_:getDimens(8), self.dimens_.top - self.dimens_:getDimens(73))
+	self.rankDetailViewHide = ccp(self.dimens_:getDimens(8), self.dimens_.top + self.dimens_:getDimens(500))
+
+	self.seatPositionTable = {}
+
+	self.actionBarHidden = ccp(0, -self.dimens_:getDimens(100))
+
+	--print("dimens width : " .. self.dimens_.right)
+
+	--self.seatPositionTable[1] = ccp(0,0)
+	--self.seatPositionTable[2] = ccp(0,0)
+	self.seatPositionTable[1] = ccp(0.5*self.dimens_.right, self.dimens_:getDimens(143))
+	self.seatPositionTable[2] = ccp(self.dimens_.right-self.dimens_:getDimens(147), self.dimens_:getDimens(230))
+	self.seatPositionTable[3] = ccp(self.dimens_.right-self.dimens_:getDimens(147), self.dimens_.top - self.dimens_:getDimens(125))
+	self.seatPositionTable[4] = ccp(self.dimens_:getDimens(148), self.dimens_.top - self.dimens_:getDimens(125))
+	self.seatPositionTable[5] = ccp(self.dimens_:getDimens(148), self.dimens_:getDimens(230))
+
+	self.chipTop = ccp(0, self.dimens_:getDimens(80))
+	self.chipPool = ccp(self.dimens_.right/2, self.dimens_:getDimens(295))
+
+	local space = 86
+	local middleX = 110
+	local hiddenSpace = 30
+	self.seatViewLayoutTableLeft = {}
+	self.seatViewLayoutTableLeft.playerView = ccp(-self.dimens_:getDimens(97), 0)
+	self.seatViewLayoutTableLeft.card = {}
+	self.seatViewLayoutTableLeft.card[1] = ccp(-self.dimens_:getDimens(14), self.dimens_:getDimens(10))
+	self.seatViewLayoutTableLeft.card[2] = ccp(self.dimens_:getDimens(104), self.dimens_:getDimens(10))
+	self.seatViewLayoutTableLeft.middleCard = ccp(self.dimens_:getDimens(45), self.dimens_:getDimens(10))
+	self.seatViewLayoutTableLeft.cardHidden = {}
+	self.seatViewLayoutTableLeft.cardHidden[1] = self.seatViewLayoutTableLeft.card[1]
+	self.seatViewLayoutTableLeft.cardHidden[2] = ccp(self.dimens_:getDimens(10), self.dimens_:getDimens(10))
+	self.seatViewLayoutTableLeft.chip = ccp(self.dimens_:getDimens(15), self.dimens_:getDimens(-45))
+	self.seatViewLayoutTableLeft.playerScore = ccp(-self.dimens_:getDimens(97), -self.dimens_:getDimens(39))
+	self.seatViewLayoutTableLeft.dealer = ccp(-self.dimens_:getDimens(80), -self.dimens_:getDimens(13))
+
+	self.seatViewLayoutTableRight = {}
+	self.seatViewLayoutTableRight.playerView = ccp(self.dimens_:getDimens(97), 0)
+	self.seatViewLayoutTableRight.card = {}
+	self.seatViewLayoutTableRight.card[1] = ccp(-self.dimens_:getDimens(104), self.dimens_:getDimens(10))
+	self.seatViewLayoutTableRight.card[2] = ccp(self.dimens_:getDimens(14), self.dimens_:getDimens(10))
+	self.seatViewLayoutTableRight.middleCard = ccp(-self.dimens_:getDimens(45), self.dimens_:getDimens(10))
+	self.seatViewLayoutTableRight.cardHidden = {}
+	self.seatViewLayoutTableRight.cardHidden[1] = ccp(-self.dimens_:getDimens(10), self.dimens_:getDimens(10))
+	self.seatViewLayoutTableRight.cardHidden[2] = self.seatViewLayoutTableRight.card[2]
+	self.seatViewLayoutTableRight.chip = ccp(self.dimens_:getDimens(0), self.dimens_:getDimens(-45))
+	self.seatViewLayoutTableRight.playerScore = ccp(self.dimens_:getDimens(97), -self.dimens_:getDimens(39))
+	self.seatViewLayoutTableRight.dealer = ccp(self.dimens_:getDimens(80), -self.dimens_:getDimens(13))
+
+	self.dealCardStartPosition = ccp(0.5*self.dimens_.right, 0.9*self.dimens_.top)
+
+	self.emotePos = {}
+	self.emotePos[1] = ccp(self.dimens_:getDimens(-210), self.dimens_:getDimens(79))
+	self.emotePos[2] = ccp(self.dimens_:getDimens(-133), self.dimens_:getDimens(79))
+	self.emotePos[3] = ccp(self.dimens_:getDimens(-56), self.dimens_:getDimens(79))
+	self.emotePos[4] = ccp(self.dimens_:getDimens(21), self.dimens_:getDimens(79))
+	self.emotePos[5] = ccp(self.dimens_:getDimens(98), self.dimens_:getDimens(79))
+	self.emotePos[6] = ccp(self.dimens_:getDimens(165), self.dimens_:getDimens(79))
+	self.emotePos[7] = ccp(self.dimens_:getDimens(-210), self.dimens_:getDimens(0))
+	self.emotePos[8] = ccp(self.dimens_:getDimens(-133), self.dimens_:getDimens(0))
+	self.emotePos[9] = ccp(self.dimens_:getDimens(-56), self.dimens_:getDimens(0))
+	self.emotePos[10] = ccp(self.dimens_:getDimens(21), self.dimens_:getDimens(0))
+	self.emotePos[11] = ccp(self.dimens_:getDimens(98), self.dimens_:getDimens(0))
+	self.emotePos[12] = ccp(self.dimens_:getDimens(165), self.dimens_:getDimens(0))
+	self.emotePos[13] = ccp(self.dimens_:getDimens(-210), self.dimens_:getDimens(-84))
+	self.emotePos[14] = ccp(self.dimens_:getDimens(-133), self.dimens_:getDimens(-84))
+	self.emotePos[15] = ccp(self.dimens_:getDimens(-56), self.dimens_:getDimens(-84))
+	self.emotePos[16] = ccp(self.dimens_:getDimens(21), self.dimens_:getDimens(-84))
+	self.emotePos[17] = ccp(self.dimens_:getDimens(98), self.dimens_:getDimens(-84))
+	self.emotePos[18] = ccp(self.dimens_:getDimens(165), self.dimens_:getDimens(-84))
+	
+	--挖宝手牌
+    local yPos = self.dimens_:getDimens(-160)
+    local xPos = self.dimens_:getDimens(65)
+    self.handCard = {}
+    self.handCard[1] = ccp(-xPos, yPos)
+    self.handCard[2] = ccp(0, yPos)
+    self.handCard[3] = ccp(xPos, yPos)
+    self.handCard[4] = ccp(xPos*2, yPos)
+    self.handCard[5] = ccp(xPos*3, yPos)
+
+end
+
+return PositionConfig

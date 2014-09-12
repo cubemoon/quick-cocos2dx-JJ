@@ -1,0 +1,1 @@
+{"ware_name":"大闹天宫赚金卡","ico":"108720.jpg","ware_explain":"天降金币雨，JJ旗下PC端5599网页游戏平台《大闹天宫》双线20服诚邀您的莅临，分享500万JJ金币巨奖，只需在2014年5月11日11：00前达到60级以上。","status":0,"merit_ware_intro":"","ware_introduction":"","composite":0,"last_update":1402394321,"reward_explain":"0","ware_id":4441,"mobile_ware_type":1,"ctime":"2014-05-06 10:42:17","reward":0}

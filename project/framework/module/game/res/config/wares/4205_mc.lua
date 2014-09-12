@@ -1,0 +1,1 @@
+{"ware_name":"缤特力M165","ico":"","ware_explain":"可兑换缤特力缤特力M165蓝牙耳机一个PS:本物品自获得之日起5天失效，请及时使用，以免造成不必要的损失","status":0,"reward_explain":"","ware_introduction":"","composite":0,"last_update":1399255627,"merit_ware_intro":"","ware_id":4205,"mobile_ware_type":1,"ctime":"2014-05-05 10:07:07","reward":2}

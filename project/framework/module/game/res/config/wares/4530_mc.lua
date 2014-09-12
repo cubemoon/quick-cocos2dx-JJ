@@ -1,0 +1,1 @@
+{"ware_name":"粽子礼盒","ico":"104059.jpg","ware_explain":"10个飘香粽子可合成1个粽子礼盒，粽子礼盒可最随机合成500-2000秋卡或50元充值卡，物品有效时间至2014-06-11。","status":0,"reward_explain":"","ware_introduction":"","composite":1,"last_update":1401173932,"merit_ware_intro":"","ware_id":4530,"mobile_ware_type":1,"ctime":"2014-05-27 14:58:52","reward":0}

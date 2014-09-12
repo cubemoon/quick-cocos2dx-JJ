@@ -1,0 +1,1 @@
+{"ware_name":"斗地主高手区通行证","ico":"108716.jpg","ware_explain":"荣誉物品，是部分比赛报名门槛\n","status":0,"merit_ware_intro":"","ware_introduction":"可在斗地主高端比赛前几名，高手证验证赛中获得\n","composite":0,"last_update":1402394213,"reward_explain":"","ware_id":37,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:17","reward":0}

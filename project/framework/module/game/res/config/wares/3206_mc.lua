@@ -1,0 +1,1 @@
+{"ware_name":"红包","ico":"","ware_explain":"可在合成炉合成1000金币","status":0,"reward_explain":"","ware_introduction":"活动期间可在2w快速、3w优雅中获得红包，合成炉合成1000金币","ctime":"2013-02-06 12:36:44","merit_ware_intro":"可在合成炉合成1000金币","last_update":1360228779,"ware_id":3206,"mobile_ware_type":1,"composite":0,"reward":0}

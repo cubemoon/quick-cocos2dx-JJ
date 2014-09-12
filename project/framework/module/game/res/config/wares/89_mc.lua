@@ -1,0 +1,1 @@
+{"ware_name":"玫瑰花","ico":"108713.jpg","ware_explain":"予人玫瑰，手有留香。送朋友一只玫瑰表达情谊吧！本物品可在我的帐户中将玫瑰花赠与心爱的人","status":0,"merit_ware_intro":"","ware_introduction":"本物品可在商城购买或节日赛中获得","composite":0,"last_update":1402393919,"reward_explain":"","ware_id":89,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:17","reward":0}

@@ -1,0 +1,391 @@
+local JJViewGroup = require("sdk.ui.JJViewGroup")
+local TrustSettingView = class("TrustSettingView", JJViewGroup)
+
+local JJListCell = import("sdk.ui.JJListCell")
+local ListCell = class("ListCell", JJListCell)
+local SwitchButton = require("interim.ui.view.SwitchButton")
+local SegmentedButton = require("interim.ui.view.SegmentedButton")
+
+local InterimUtilDefine = require("interim.util.InterimUtilDefine")
+local INTERIM_SOUND = InterimUtilDefine.INTERIM_SOUND
+
+local offsetX = -15
+
+function ListCell:ctor(params, parentView)
+    ListCell.super.ctor(self, params)
+    self.TAG = "TableCell"
+    self.parentView = parentView
+    self.dimens_ = self.parentView.dimens_
+   -- JJLog.i(self.TAG, "ctor()")
+
+    self.index = params.index
+
+    local viewSize = CCSize(self.parentView.bgSize.width, self.parentView.bgSize.height/7)
+    self:setViewSize(viewSize.width, viewSize.height)
+
+    local bar = jj.ui.JJImage.new({
+         image = "img/interim/ui/cellbar.png",
+      })
+    bar:setAnchorPoint(ccp(0.5, 0.5))
+    bar:setPosition(viewSize.width/2-self.dimens_:getDimens(offsetX), viewSize.height/2)
+    bar:setScale(self.dimens_.scale_)
+    bar:setOpacity(100)
+    self:addView(bar)
+
+    local titleLabel = jj.ui.JJLabel.new({
+        fontSize = 30*self.dimens_.scale_,
+        color = ccc3(253, 210, 97),
+    })
+    titleLabel:setAnchorPoint(ccp(0.5,0.5))
+    titleLabel:setPosition(self.dimens_:getDimens(100), viewSize.height/2)
+    self:addView(titleLabel)
+    self:setLabelTextForIndex(titleLabel, params.index)
+
+    self.enableButton = SegmentedButton.new({
+        onImage = "img/interim/ui/max_on.png",
+        offImage = "img/interim/ui/fold_on.png"
+    })
+    self.enableButton.name = "enable"
+    self.enableButton.delegate = self
+    self.enableButton:setScale(self.dimens_.scale_)
+    self.enableButton:setAnchorPoint(ccp(0.5,0.5))
+    self.enableButton:setPosition(viewSize.width/2-self.dimens_:getDimens(offsetX), viewSize.height/2-3)
+    self:addView(self.enableButton)
+
+    if params.index >= 9 and params.index <= 11 then
+        self.checkBox = jj.ui.JJCheckBox.new({
+            images={
+               on="img/interim/ui/btn_check_on.png",
+               off="img/interim/ui/btn_check_off.png" 
+            },
+            clickSound = "sound/BackButtonSound.mp3"
+        })
+        self:addView(self.checkBox)
+        self.checkBox:setLabelOffset(5, 0)
+        self.checkBox:setLabel({
+            text = "只卡同花", 
+            fontSize = 14, 
+            color = ccc3(253, 210, 97)
+        })
+        self.checkBox:setAnchorPoint(ccp(0.5, 0.5))
+        self.checkBox:setPosition(self.dimens_:getDimens(482), viewSize.height/2)
+        self.checkBox:setId(1)
+        self.checkBox:setScale(self.dimens_.scale_)
+    -- self.checkBox:setEnable(false)
+        self.checkBox:setTouchEnable(true)
+        self.checkBox:setOnCheckedChangeListener(handler(self, self.onCheckedChangeListener))
+    
+       -- self.checkBoxEnable = false
+       -- self:setCheckBoxEnable(false)
+    else
+        self.checkBox = nil
+    end
+end
+
+function ListCell:setCheckBoxEnable(var)
+   -- self.checkBox:setEnable(var)
+   self.checkBoxEnable = var
+   if var == false then
+        self.checkBox.sprite_:setOpacity(50)
+        self.checkBox:setTouchEnable(false)
+      --  self.checkBox.labels_["on"]:setOpacity(50)
+      --  self.checkBox.labels_["off"]:setOpacity(50)
+        
+   else
+        self.checkBox.sprite_:setOpacity(255)
+        self.checkBox:setTouchEnable(true)
+      --  self.checkBox.labels_["on"]:setOpacity(100)
+      --  self.checkBox.labels_["off"]:setOpacity(100)     
+   end
+end
+
+function ListCell:onEnter()
+    self.super:onEnter()
+    self.enableButton:setSwitchStatus(self:getTrustStatus())
+    if self.index >= 9 and self.index <= 11 then
+        local gameData = GameDataContainer:getGameData(INTERIM_MATCH_ID)
+        local dataIndex = self:getDataIndex()
+        local setting = gameData.delegateSetting[dataIndex]
+        local check = setting.flushOnly
+        self.checkBox:setChecked(check)
+
+        if self:getTrustStatus() == false then
+            self:setCheckBoxEnable(false)
+        else
+            self:setCheckBoxEnable(true)
+        end
+        
+    end
+end
+
+function ListCell:onSegmentStatusChanged(button, status)
+    if button.name == "enable" then
+       self:setTrustStatus(status)
+
+       if self.checkBox ~= nil then
+            self:setCheckBoxEnable(status)
+       end
+    end
+end
+
+function ListCell:onCheckedChangeListener(target)
+    if self.index < 9 or self.index > 12 then
+        return
+    end
+
+    local gameData = GameDataContainer:getGameData(INTERIM_MATCH_ID)
+    local dataIndex = self:getDataIndex()
+    local check = target:isSelected()    
+    gameData.delegateSetting[dataIndex].flushOnly = check
+    local key = "Interim_" ..  "DelegateStrategy" .. dataIndex .. "flushOnly"
+    CCUserDefault:sharedUserDefault():setBoolForKey(key, check)
+
+end
+
+function ListCell:getTrustStatus()
+    local gameData = GameDataContainer:getGameData(INTERIM_MATCH_ID)
+    local dataIndex = self:getDataIndex()
+    local setting = gameData.delegateSetting[dataIndex]
+    if setting ~= nil then
+        return setting.max
+    end
+    return false
+end
+
+function ListCell:getDataIndex()
+    if self.index == 1 then
+        return 12
+    elseif self.index == 2 then
+        return 11
+    elseif self.index == 3 then
+        return 10
+    elseif self.index == 4 then
+        return 9
+    elseif self.index == 5 then
+        return 8
+    elseif self.index == 6 then
+        return 7
+    elseif self.index == 7 then
+        return 6
+    elseif self.index == 8 then
+        return 5
+    elseif self.index == 9 then
+        return 4
+    elseif self.index == 10 then
+        return 3
+    elseif self.index == 11 then
+        return 2
+    elseif self.index == 12 then
+        return 1
+    end
+end
+
+function ListCell:setTrustStatus(status)
+    local gameData = GameDataContainer:getGameData(INTERIM_MATCH_ID)
+    local dataIndex = self:getDataIndex()
+    gameData.delegateSetting[dataIndex].max = status
+
+    local key = "Interim_" ..  "DelegateStrategy" .. dataIndex .. "max"
+    CCUserDefault:sharedUserDefault():setBoolForKey(key, status)
+end
+
+function ListCell:setLabelTextForIndex(label, index)
+    if index == 1 then
+        label:setText("12")
+    elseif index == 2 then
+        label:setText("11")
+    elseif index == 3 then
+        label:setText("10")
+    elseif index == 4 then
+        label:setText("9")
+    elseif index == 5 then
+        label:setText("8")
+    elseif index == 6 then
+        label:setText("7")
+    elseif index == 7 then
+        label:setText("6")
+    elseif index == 8 then
+        label:setText("5（四卡）")
+    elseif index == 9 then
+        label:setText("4（三卡）")
+    elseif index == 10 then
+        label:setText("3（双卡）")
+    elseif index == 11 then
+        label:setText("2（卡当）")
+    elseif index == 12 then
+        label:setText("0（豹子）")
+    end
+end
+
+local ListAdapter = class("ListAdapter", require("sdk.ui.JJBaseAdapter"))
+function ListAdapter:ctor(parentView)
+    ListAdapter.super.ctor(self)
+    self.parentView = parentView
+    self.TAG = "ListAdapter"
+    self.count_ = 12
+end
+
+function ListAdapter:getCount()
+    return self.count_
+end
+
+function ListAdapter:removeItem(position)
+    if self.count_ > 0 then
+        self.count_ = self.count_ -1 
+        self:notifyDataSetChanged()
+    end
+    
+end
+
+function ListAdapter:getView(position)
+    JJLog.i(self.TAG, "getItem() postion="..position)
+    return ListCell.new({
+        index=position
+    }, self.parentView)
+end
+
+function TrustSettingView:ctor(parentView)
+	TrustSettingView.super.ctor(self, parentView)
+	self.parentView = parentView
+	self.dimens_ = parentView.dimens_
+	self:initView()
+end
+
+function TrustSettingView:initView()
+
+    self:setTouchEnable(true)
+
+    local background = jj.ui.JJImage.new({
+		 image = "img/interim/ui/pop_up_bg.png",
+      })
+    background:setAnchorPoint(ccp(0.5, 0.5))
+    background:setPosition(0, 0)
+    background:setScale(self.dimens_.scale_)
+    self:addView(background)
+   
+    self:setAnchorPoint(ccp(0.5, 0.5))
+
+    self.bgSize = CCSizeMake(background:getViewSize().width*background:getScaleX(),
+    background:getViewSize().height*background:getScaleY())
+    
+    local titleBg = jj.ui.JJImage.new({
+         image = "img/interim/ui/titleBg.png",
+      })
+    titleBg:setAnchorPoint(ccp(0.5, 0.5))
+    titleBg:setPosition(-10, self.bgSize.height*0.4)
+    titleBg:setScale(self.dimens_.scale_)
+    self:addView(titleBg)
+
+    local titleLabel = jj.ui.JJLabel.new({
+    	fontSize = 30*self.dimens_.scale_,
+        color = ccc3(253, 210, 97),
+        text = "托管设定",
+    })
+    titleLabel:setAnchorPoint(ccp(0.5,0.5))
+    titleLabel:setPosition(-10, self.bgSize.height*0.4)
+    self:addView(titleLabel)
+
+    self.enableButton = SegmentedButton.new()
+    self.enableButton.name = "enable"
+    self.enableButton.delegate = self
+    self.enableButton:setScale(self.dimens_.scale_)
+    self.enableButton:setAnchorPoint(ccp(0.5,0.5))
+    self.enableButton:setPosition(self.dimens_:getDimens(-6), self.dimens_:getDimens(95))
+    self:addView(self.enableButton)
+
+    local separatorUp = jj.ui.JJImage.new({
+         image = "img/interim/ui/separator.png",
+      })
+    separatorUp:setAnchorPoint(ccp(0.5, 0.5))
+    separatorUp:setPosition(self.dimens_:getDimens(offsetX), self.dimens_:getDimens(60))
+    separatorUp:setScale(self.dimens_.scale_)
+    self:addView(separatorUp)
+
+    local label = self:createLabel("底牌数字之差")
+    label:setPosition(self.dimens_:getDimens(-204), self.dimens_:getDimens(40))
+    self:addView(label) 
+
+     local strategyLabel = self:createLabel("下注策略")
+    strategyLabel:setPosition(self.dimens_:getDimens(0), self.dimens_:getDimens(40))
+    self:addView(strategyLabel)
+
+    local separatorDown = jj.ui.JJImage.new({
+         image = "img/interim/ui/separator.png",
+      })
+    separatorDown:setAnchorPoint(ccp(0.5, 0.5))
+    separatorDown:setPosition(self.dimens_:getDimens(offsetX), self.dimens_:getDimens(25))
+    separatorDown:setScale(self.dimens_.scale_)
+    self:addView(separatorDown)
+
+    self.listviewAdapter = ListAdapter.new(self)
+    local listview = jj.ui.JJListView.new({
+        viewSize = CCSize(self.dimens_:getDimens(570),self.dimens_:getDimens(205) ),
+        adapter = self.listviewAdapter,
+    })
+    listview:setAnchorPoint(ccp(0.5,0.5))
+    listview:setId(22)
+    listview:setPosition(self.dimens_:getDimens(offsetX), -self.dimens_:getDimens(90))
+    self:addView(listview)
+end
+
+function TrustSettingView:onTouchBegan(x, y)
+    if self:isTouchInside(x, y) == true and self.bTouchEnable_ then
+        self:setTouchedIn(true)
+        local pos = self:convertToNodeSpace(ccp(x, y))
+         JJLog.i("TrustSettingView:onTouchBegan************")
+        if pos.x > 210*self.dimens_.scale_
+         and pos.y > 130*self.dimens_.scale_ then
+            self.parentView:hideTrustSettingView()
+            SoundManager:playEffect(INTERIM_SOUND.BUTTON)
+
+        end
+        return true
+    end
+    return false
+end
+
+function TrustSettingView:onEnter()
+    self.super:onEnter()
+   
+end
+
+function TrustSettingView:refreshData(  )
+     local gameData = GameDataContainer:getGameData(INTERIM_MATCH_ID)
+    self.enableButton:setSwitchStatus(gameData.delegated)
+end
+
+function TrustSettingView:createLabel(labelText)
+    local label = jj.ui.JJLabel.new({
+        fontSize = 20*self.dimens_.scale_,
+        color = ccc3(253, 210, 97),
+        text = labelText,
+    })
+    label:setAnchorPoint(ccp(0.5,0.5))
+    return label
+end
+
+function TrustSettingView:createButton(buttonText)
+    local btn = jj.ui.JJButton.new({
+        images = {
+            normal = "img/interim/common/blue_button02.png",   
+            highlight = "img/interim/common/yellow_button02.png",
+            scale9 = true
+        },
+        viewSize = CCSize(130, 50),
+        fontSize = 28,
+        color = ccc3(255, 255, 255),
+        text = buttonText,
+    })
+    btn:setAnchorPoint(ccp(0.5, 0.5))
+    return btn
+end
+
+function TrustSettingView:onSegmentStatusChanged(button, value)
+
+    local gameData = GameDataContainer:getGameData(INTERIM_MATCH_ID)
+    gameData.delegated = value
+    self.parentView.standByTipLabel:setVisible(value)
+
+end
+
+return TrustSettingView

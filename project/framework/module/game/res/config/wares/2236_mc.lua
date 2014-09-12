@@ -1,0 +1,1 @@
+{"ware_name":"赖斗王","ico":"56142.jpg","ware_explain":"拥有此物品说明您已经在赖斗领域里获得一席之地啦，希望您在赖斗游戏里继续追求更高的荣誉。","status":0,"merit_ware_intro":"","ware_introduction":"可在赖斗王决赛中获得","composite":1,"last_update":1402391253,"reward_explain":"0","ware_id":2236,"mobile_ware_type":1,"ctime":"2013-11-05 12:45:58","reward":0}

@@ -1,0 +1,22 @@
+﻿编译说明：
+	进入项目下build目录下 执行./bd.sh 加相应的编译参数
+	目前支持的编译参数为：[-f] [--launcher] [-t] [-p] [--lazy] [--install] [-e]
+	上面的编译参数都是可选的。
+编译参数说明：
+	-f: 		用来处理由GenConfig.jar生成的批量编译配置文件(buildlist.txt)
+	--launcher:	用来控制是否打安装后不显示应用图标的包, 缺省为yes(正常包显示icon)
+	-t:		编译模式 目前只支持normal模式，缺省为normal
+	--install: 将在bin目录生成的XXX-release.apk安装到手机
+	-e: 脚本资源是否加密
+注意事项：
+	1. 使用./bs.sh编译时缺省是不拷贝资源文件的，需要先执行./bd.sh --res 把res_share 和res_game下的资源拷贝到res下后在进行编译.
+	2. 在编译扰码版本时，请先修改 env_game\normal\proguard.config 里的 android.jar 路径
+
+
+普通调试：./bd.sh --lazy	此模式下不会进行扰码，可以输出日志，否则 PB 的日志会导致崩溃
+
+
+批量打包：
+1. 配置好 test.xls 文件
+2. 用 GenConfig 生成 buildlist.txt
+3. ./bd.sh -f buildlist.txt

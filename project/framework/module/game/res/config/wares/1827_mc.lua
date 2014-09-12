@@ -1,0 +1,1 @@
+{"ware_name":"欢乐斗200PK票","ico":"","ware_explain":"可用于报名欢乐斗200PK赛。","status":0,"reward_explain":"","ware_introduction":"","ctime":"2012-04-09 16:24:20","merit_ware_intro":"","last_update":1346224181,"ware_id":1827,"mobile_ware_type":1,"composite":0,"reward":0}

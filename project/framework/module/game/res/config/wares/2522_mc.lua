@@ -1,0 +1,1 @@
+{"ware_name":"手机30pk参赛券","ico":"","ware_explain":"可参加需要30报名费的比赛，比如“手机专场-30pk旋风赛”","status":0,"reward_explain":"","ware_introduction":"可在斗地主每日签到赛中获得\n可在麻将新手岛屿赛中获得\n可在欢乐斗新手训练岛、午休抢金赛、Q币抢夺赛中获得。","ctime":"2012-07-05 16:35:11","merit_ware_intro":"可参加需要30报名费的比赛，比如“手机专场-30pk旋风赛”","last_update":1354941461,"ware_id":2522,"mobile_ware_type":1,"composite":0,"reward":0}

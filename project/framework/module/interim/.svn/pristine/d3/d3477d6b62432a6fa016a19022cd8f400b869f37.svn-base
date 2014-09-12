@@ -1,0 +1,412 @@
+local InterimData = class("InterimData",require("game.data.game.GameData"))
+local PlayerInfo = require("interim.data.InterimPlayerInfo")
+
+function InterimData:ctor()
+	
+	self:init()
+	self:initSetting()
+
+	self.gameStarted = false
+end
+
+function InterimData:init()
+	
+	-- 改变分数
+	self.changeScoreData = {}
+	self.changeScoreData.score = {}
+	self.changeScoreData.seat = {}
+
+	-- 每局开场信息
+	self.bankSeat = -1;
+	self.firstSeat = -1;
+	self.cardCount = 0;
+	self.playerCount = 0;
+	self.anBottomCoin = {}
+	self.anTax = {}
+	self.anNewBlind = {}
+	self.anBalanceTax = {}
+	self.nBaseScore = 0
+	self.tableCoin = 0
+	self.enProba = 0
+	--self.matchName = ""
+	self.playerCards = {}
+	self.playerCards[1] = 256
+	self.playerCards[2] = 256
+
+	self.divideTableCoin = {}
+	for i=1,5 do
+		self.divideTableCoin[i] = 0
+	end
+	self.hasPlayerOut = false
+	self.lastPlayer = false
+	self.divideTableCoinSingle = 0
+
+	-- 彩池相关消息
+	self.curPrizePool = 0
+	self.poolNote = ""
+
+	self.jackpotcount = 0
+	self.jackpotinfo = ""
+
+	self.conGamb = {}
+	self.conGamb.seat = 0
+  	self.conGamb.card = 0
+	self.conGamb.winCoin = 0
+	self.conGamb.everyWin = 0
+	self.conGamb.enResult = 0
+	self.conGamb.cardCount = 0
+	self.conGamb.click = 0
+
+	self.gambData = {}
+ 	self.gambData.seat = 0
+  	self.gambData.card = 0
+  	self.gambData.winCoin = 0
+  	self.gambData.everyWin = 0
+  	self.gambData.enResult = 0
+  	self.gambData.nextSeat = 0 
+  	self.gambData.enProbaCur = 0
+  	self.gambData.click = 0
+
+	-- 等待时间
+	-- 还没用到
+	self.waitTime = 20
+
+	--self:readLocalConfig()
+
+	-- 表情
+	self.emote = {}
+	self.emote.useridfrom = 0
+	self.emote.emotionid = 0
+
+	-- 锦标赛比赛结果
+	self.matchAward = nil
+
+end
+
+-- 这部分数据不会被随意重置
+function InterimData:initSetting()
+
+	self.notFirstEnterGame = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_FirstPlay")
+	self.fastSitFlag = false
+	self.isAction = false
+
+	self.showResignup = false
+	self.signupplayer = 0
+	self.maxmatchplayercount = 0
+	--显示奖状
+	self.showAward = false
+
+	self.tourneyID = 0
+	self.recieveNewWiner = false
+
+	--锦标赛里允许托管的比赛ID
+	self.autoFold = false
+	self.delegateMatchID = {9814,9815,9816,9817}
+	self.matchrank = 0    -- 玩家等级
+
+	self.gamePlayers_ = {} --玩家排名
+	-- 补充筹码
+	self.maxaddtohp = 0
+	self.minaddtohp = 0
+	self.exchangerate = 0
+	-- 游戏状态
+	self.GAME_OFF = 0
+	self.GAME_ROUND_START = 1
+	self.GAME_ROUND_END = 2
+
+	-- 玩家状态
+	self.MYSTATUS_NONE = 0 		-- 站起状态，可以坐下
+	self.MYSTATUS_ROOM_FULL = 1 	--站起状态，房间已满不可坐下
+	self.MYSTATUS_SIT_WAITING = 2 		-- 坐下，不能参与游戏
+	self.MYSTATUS_IN_GAME_NOT_MY_TRUN = 3 		-- 游戏中，等待
+	self.MYSTATUS_IN_GAME_MY_TURN = 4 			-- 游戏中，轮到我出牌
+	self.MYSTATUS_IN_GAME_LOTTERY_1 = 5 		-- 选择一级挖宝
+	self.MYSTATUS_IN_GAME_LOTTERY_2 = 6 		-- 选择二级挖宝
+	
+	self.gameStatus = InterimData.GAME_OFF
+
+	self.myStatus = self.MYSTATUS_NONE
+
+	--自动补码
+	self.shouldShowBuyChipResult = false
+	-- 站起标签
+	self.standFlag = true
+
+	--玩家奖励信息
+	self.winnerDesc = {}
+
+	-- 规则属性
+	self.property = {}
+	self.property.callTime = 8
+	self.property.lotteryTime = 10
+	self.property.fiveFlushRewardRate = 0.3
+	self.property.AJ4RewardRate = 0.1
+	self.property.flushRewardRate = 0.1
+	self.property.normal4RewardRate = 0.1
+	self.property.isTourny = false -- 是否是锦标赛
+	self.property.poolBottom = 200
+
+	-- 每次叫牌信息
+	self.coinData = {}
+
+	-- 进入场景时
+	self.enteringScene = true
+	self.enteringHistory = false
+	--self.historyData = {}
+
+	-- 所有玩家信息
+	self:resetAllPlayerInfo()
+	
+	self.autoBuyChip = false
+
+	self.matchName = ""
+	self.interimMatchId = 0
+	self.myCoin = 0
+	self.minCoin = nil
+	self.myLevel = nil
+
+	-- 委托设置
+	self.delegated = false
+	self.delegateSetting = {}
+
+	self.delegateSetting[1] = {}
+	self.delegateSetting[1].max = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_" ..  "DelegateStrategy" .. 1 .. "max")
+	self.delegateSetting[1].flushOnly = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_" ..  "DelegateStrategy" .. 1 .. "flushOnly")
+ 
+	self.delegateSetting[2] = {}
+	self.delegateSetting[2].max = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_" ..  "DelegateStrategy" .. 2 .. "max")
+	self.delegateSetting[2].flushOnly = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_" ..  "DelegateStrategy" .. 2 .. "flushOnly")
+	
+	self.delegateSetting[3] = {}
+	self.delegateSetting[3].max = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_" ..  "DelegateStrategy" .. 3 .. "max")
+	self.delegateSetting[3].flushOnly = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_" ..  "DelegateStrategy" .. 3 .. "flushOnly")
+	
+	self.delegateSetting[4] = {}
+	self.delegateSetting[4].max = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_" ..  "DelegateStrategy" .. 4 .. "max")
+	self.delegateSetting[4].flushOnly = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_" ..  "DelegateStrategy" .. 4 .. "flushOnly")
+	
+	self.delegateSetting[5] = {}
+	self.delegateSetting[5].max = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_" ..  "DelegateStrategy" .. 5 .. "max")
+	self.delegateSetting[5].flushOnly = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_" ..  "DelegateStrategy" .. 5 .. "flushOnly")
+	
+	self.delegateSetting[6] = {}
+	self.delegateSetting[6].max = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_" ..  "DelegateStrategy" .. 6 .. "max")
+	
+	self.delegateSetting[7] = {}
+	self.delegateSetting[7].max = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_" ..  "DelegateStrategy" .. 7 .. "max")
+	
+	self.delegateSetting[8] = {}
+	self.delegateSetting[8].max = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_" ..  "DelegateStrategy" .. 8 .. "max")
+	
+	self.delegateSetting[9] = {}
+	self.delegateSetting[9].max = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_" ..  "DelegateStrategy" .. 9 .. "max")
+	
+	self.delegateSetting[10] = {}
+	self.delegateSetting[10].max = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_" ..  "DelegateStrategy" .. 10 .. "max")
+	
+	self.delegateSetting[11] = {}
+	self.delegateSetting[11].max = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_" ..  "DelegateStrategy" .. 11 .. "max")
+	
+	self.delegateSetting[12] = {}
+	self.delegateSetting[12].max = CCUserDefault:sharedUserDefault():getBoolForKey("Interim_" ..  "DelegateStrategy" .. 12 .. "max")
+
+	self.popviewStatus = 0
+
+	-- 比赛信息
+	self.rank = nil
+	self.leavePlayer = nil
+
+	self.roundInfo = {}
+	self.roundInfo.scoreBase = nil
+	self.roundInfo.showScoreBase = false
+	self.roundInfo.roundId = 0
+
+	--玩家参与过的游戏信息
+	self.playerGameData = {}
+	self.playerGameData.userid = 1
+	self.playerGameData.exchangerate = 0
+	self.playerGameData.leftchip = 1
+	self.playerGameData.totalfinishedgamecount = 1
+	self.playerGameData.curgamehand = 1
+	self.playerGameData.curfinishedgamecount = 1
+
+	self.isDiggerEnd = true   -- 解决挖宝界面断网后不消失的bug，true 为挖宝结束 
+
+
+end
+
+function InterimData:setMatchPlayers(playerList)
+    print("setMatchPlayers*****************************")
+  if playerList then
+    self.gamePlayers_ = {}
+    local item 
+    for k, player in ipairs(playerList) do
+      if k > 80 then break end
+      item = require("game.data.game.PlayerOrderInfo").new()
+            item.userId_ = player.userid
+            item.rank_ =player.placeorder
+            item.nickName_ = player.nickname
+            item.out_ = (player.outroundstate == 0)
+            item.score_ = player.score
+            item.deskMate_ = false
+            table.insert(self.gamePlayers_, item)
+    end
+    table.sort(self.gamePlayers_, function(a,b) return a.rank_ < b.rank_ end)     
+  end
+end
+
+function InterimData:readLocalConfig()
+	local path = device.writablePath .. "data/interim_config.lua"
+
+end
+
+function InterimData:writeLocalConfig()
+	
+end
+
+-- 玩家信息Table
+-- 不要在其他地方对PlayerInfo对象持久引用
+function InterimData:resetAllPlayerInfo()
+	self.allPlayerInfo = {}
+	for i=1,5 do
+		self.allPlayerInfo[i] = PlayerInfo.new()
+	end
+
+	print("*********InterimData:resetAllPlayerInfo*****************")
+end
+
+function InterimData:resetGame()
+	self.super.resetGame(self)
+	self:init()
+
+	-- self:resetAllPlayerInfo()
+end
+
+function InterimData:checkPlayerCardIsFlush()
+	local point1 = (self.playerCards[1]-1)/13
+	point1 = point1 - point1%1
+	local point2 = (self.playerCards[2]-1)/13
+	point2 = point2 - point2%1
+	if point1 == point2 then
+		return true
+	else
+		return false
+	end
+end
+
+function InterimData:getPlayerCount()
+	local count = 0
+	local hasMyself = false
+	for i,v in ipairs(self.allPlayerInfo) do
+		if v.tkInfo.userid ~= 0 then
+			count = count + 1
+		end
+
+		if v.tkInfo.userid == UserInfo.userId_ then
+			hasMyself = true
+		end
+	end
+
+	if hasMyself == false then
+		count = count + 1
+	end
+
+	return count
+end
+
+function InterimData:getPlayerCardBalance()
+	if self.playerCards == nil or self.playerCards[1] == 256
+	or self.playerCards[2] == 256 then
+		return -1
+	end
+	local point1 = self.playerCards[1]%13
+	if point1 == 0 then
+		point1 = 13
+	end
+    
+    local point2 = self.playerCards[2]%13
+	if point2 == 0 then
+		point2 = 13
+	end
+
+	local balance = point1 - point2
+	if balance < 0 then
+		balance = balance*(-1)
+	end
+	return balance
+end
+
+function InterimData:getPlayerInfoByID(id)
+--	print("寻找玩家" .. id)
+	for i,v in ipairs(self.allPlayerInfo) do
+--		print("玩家id：" .. v.tkInfo.userid)
+		if v.tkInfo.userid == id then
+--			print("找到玩家")
+			return v
+		end
+	end
+	return nil
+end
+
+function InterimData:getPlayerInfoBySeatIndex(seatIndex)
+	local playInfo = nil
+	for i,v in ipairs(self.allPlayerInfo) do
+		if v.tkInfo.seat == seatIndex then
+			playInfo = v
+		end
+	end
+	return playInfo
+end
+
+function InterimData:getMyPlayerInfo()
+	local playInfo = nil
+	local myUserid = UserInfo.userId_
+	for i,v in ipairs(self.allPlayerInfo) do
+		if v.tkInfo.userid == myUserid then
+			playInfo = v
+		end
+	end
+	return playInfo
+end
+
+-- 开始新一局(收到InitCardAck)时调用
+function InterimData:roundStarting()
+	self:resetUpdatedPlayer()
+
+	if self.property.isTourny  == false then
+		self:unflagAllPlayerInfo()
+		print("self.property.isTourny  == false***InterimData:roundStarting()")
+	end
+end
+
+-- 标记所有玩家为未更新
+-- 在新一局开始之前会获得当前游戏所有玩家，在那时对应玩家信息会被标记为更新过
+function InterimData:unflagAllPlayerInfo()
+	for i,v in ipairs(self.allPlayerInfo) do
+		v.dataUpdated = false
+	end
+end
+
+-- 在新一局开始时，如果还有未更新的玩家信息说明这个玩家已经离开
+-- 移除所有未更新过的玩家信息
+function InterimData:resetUpdatedPlayer()
+	for i,v in ipairs(self.allPlayerInfo) do
+		if v.dataUpdated == false then
+			v:reset()
+		end
+	end
+end
+
+function InterimData:checkSeatFull()
+	local full = true
+	for i=1,5 do
+		local playerInfo = self.allPlayerInfo[i]
+		if playerInfo.tkInfo.userid == 0 then
+			full = false
+			break
+		end
+	end
+	return full
+end
+
+return InterimData

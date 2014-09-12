@@ -1,0 +1,1 @@
+{"ware_name":"心之玫瑰","ico":"94196.png","ware_explain":"心之玫瑰，魂之所倚。寄托心之低语，承载魂之依恋。本物品可在合成炉中将他人的心意变换成金币。","status":0,"merit_ware_intro":"","ware_introduction":"","composite":1,"last_update":1398322461,"reward_explain":"","ware_id":93,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:17","reward":0}

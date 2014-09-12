@@ -1,0 +1,1 @@
+{"ware_name":"百元充值卡参赛券","ico":"","ware_explain":"可以用来参加麻将每日晚上20:30的百元充值卡话费赛。有效期15天","status":0,"reward_explain":"","ware_introduction":"“麻将新手锦标赛”“麻将免费赚金赛”有几率掉落。","ctime":"2012-05-28 16:05:05","merit_ware_intro":"","last_update":1342681469,"ware_id":2192,"mobile_ware_type":1,"composite":0,"reward":0}

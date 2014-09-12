@@ -1,0 +1,1 @@
+{"ware_name":"银叶子","ico":"","ware_explain":"1银叶子可合成1秋卡，请去合成炉合成，银叶子有效期至2014年3月21日，请及时使用。","status":0,"merit_ware_intro":"1银叶子可合成1秋卡，请去合成炉合成，银叶子有效期至2014年3月21日，请及时使用。","ware_introduction":"","composite":1,"last_update":1398053033,"reward_explain":"","ware_id":2873,"mobile_ware_type":0,"ctime":"2012-09-26 17:22:53","reward":0}

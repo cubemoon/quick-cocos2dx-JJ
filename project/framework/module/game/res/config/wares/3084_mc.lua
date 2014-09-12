@@ -1,0 +1,1 @@
+{"ware_name":"50PK参赛券","ico":"","ware_explain":"用于报名参加50PK比赛。","status":0,"reward_explain":"","ware_introduction":"可以从德州签到卡赛、德州Q币、德州免费赢金币赛中获得","ctime":"2012-12-06 19:55:52","merit_ware_intro":"用于报名50pk比赛","last_update":1354941136,"ware_id":3084,"mobile_ware_type":1,"composite":0,"reward":0}

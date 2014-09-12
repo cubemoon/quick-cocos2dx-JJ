@@ -1,0 +1,1 @@
+{"ware_name":"白金鼎","ico":"108721.jpg","ware_explain":"赫赫有名的白金斗士勋章。赖斗荣誉物品。","status":0,"merit_ware_intro":"","ware_introduction":"可以在赖斗高端赛中赢取","composite":0,"last_update":1402394385,"reward_explain":"","ware_id":1189,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:18","reward":0}

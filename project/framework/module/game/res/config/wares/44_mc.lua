@@ -1,0 +1,1 @@
+{"ware_name":"蓝水晶","ico":"108717.jpg","ware_explain":"蓝水晶可以提高合成炉合成成功率，大部分合成公式的必备物品。","status":0,"merit_ware_intro":"","ware_introduction":"","composite":0,"last_update":1402394239,"reward_explain":"","ware_id":44,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:17","reward":0}

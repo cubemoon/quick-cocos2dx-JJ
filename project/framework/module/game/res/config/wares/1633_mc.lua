@@ -1,0 +1,1 @@
+{"ware_name":"德州追魂票","ico":"108749.jpg","ware_explain":"追魂夺魄，势在必得！德州扑克金戒指大战门票，预赛第10 - 150名获得。凭此票报名金戒指大战初始筹码10W。","status":0,"merit_ware_intro":"","ware_introduction":"德州扑克金戒指大战门票，预赛第10 - 150名获得。凭此票报名金戒指大战初始筹码10W。","composite":0,"last_update":1402397509,"reward_explain":"","ware_id":1633,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:19","reward":0}

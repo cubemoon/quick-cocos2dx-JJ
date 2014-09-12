@@ -1,0 +1,1 @@
+{"ware_name":"手机赢三张体验卡","ico":"108724.jpg","ware_explain":"凭该物品可免费报名手机版的赢三张邀请赛，参与均有金币奖励，冠军88万金币。有效期至2013-12-01 00:00:00。","status":0,"merit_ware_intro":"","ware_introduction":"由系统发放给邀请的玩家","composite":0,"last_update":1402394692,"reward_explain":"0","ware_id":4016,"mobile_ware_type":1,"ctime":"2013-11-01 13:45:56","reward":0}

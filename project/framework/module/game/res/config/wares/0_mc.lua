@@ -1,0 +1,1 @@
+{"ware_name":"20元礼品券","ico":"","ware_explain":"","status":0,"reward_explain":"","ware_introduction":"","ctime":"2012-10-29 12:05:41","merit_ware_intro":"","last_update":1354591597,"ware_id":0,"mobile_ware_type":1,"composite":0,"reward":0}

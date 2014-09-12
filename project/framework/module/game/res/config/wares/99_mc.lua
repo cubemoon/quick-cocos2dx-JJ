@@ -1,0 +1,1 @@
+{"ware_name":"金质宝箱","ico":"","ware_explain":"据传，此箱为神秘仙人打牌输给凡人留下的宝箱，每个赢得它的人都能在合成炉从宝箱中中取出一件宝物。PS：宝箱会在168小时内消失，请尽快使用","status":0,"reward_explain":"","ware_introduction":"","ctime":"2012-04-09 16:24:17","merit_ware_intro":"","last_update":1351661486,"ware_id":99,"mobile_ware_type":1,"composite":0,"reward":0}

@@ -1,0 +1,212 @@
+local JJViewGroup = require("sdk.ui.JJViewGroup")
+local HelpView = class("HelpView", JJViewGroup)
+
+local SegmentedButton = require("interim.ui.view.SegmentedButton")
+
+function HelpView:ctor(parentView)
+	HelpView.super.ctor(self, parentView)
+	self.parentView = parentView
+	self.dimens_ = parentView.dimens_
+	self:initView()
+end
+
+function HelpView:initView()
+	self.background = jj.ui.JJImage.new({
+		 image = "img/interim/ui/help_bg.png",
+      })
+    self.background:setAnchorPoint(ccp(0.5, 0.5))
+    self.background:setPosition(0, 0)
+    self.background:setScale(self.dimens_.scale_)
+    self:addView(self.background)
+
+    self.background_2 = jj.ui.JJImage.new({
+         image = "img/interim/ui/emote_bg.png",
+      })
+    self.background_2:setAnchorPoint(ccp(0.5, 0.5))
+    self.background_2:setPosition(0, 0)
+    self.background_2:setScale(self.dimens_.scale_)
+    self:addView(self.background_2)
+   
+    self:setAnchorPoint(ccp(0.5, 0.5))
+
+    self.bgSize = CCSizeMake(self.background:getViewSize().width*self.background:getScaleX(),
+    self.background:getViewSize().height*self.background:getScaleY())
+    
+    self.normalHelp = JJViewGroup.new()
+    self:addView(self.normalHelp)
+
+    -- local titleImage = jj.ui.JJImage.new({
+    --      image = "img/interim/ui/help_title.png",
+    --   })
+    -- titleImage:setAnchorPoint(ccp(0.5, 0.5))
+    -- titleImage:setPosition(self.dimens_:getDimens(-5), self.dimens_:getDimens(115))
+    -- titleImage:setScale(self.dimens_.scale_)
+    -- self.normalHelp:addView(titleImage)
+
+    local titleLabel = jj.ui.JJLabel.new({
+        fontSize = 30*self.dimens_.scale_,
+        color = ccc3(253, 210, 97),
+        text = "帮 助",
+    })
+    titleLabel:setAnchorPoint(ccp(0.5,0.5))
+    titleLabel:setPosition(self.dimens_:getDimens(-10), self.dimens_:getDimens(117))
+    self.normalHelp:addView(titleLabel)
+
+    local normalLabel = jj.ui.JJLabel.new({
+        fontSize = 22*self.dimens_.scale_,
+        color = ccc3(252, 211, 97),
+       -- viewSize = CCSize(430*self.dimens_.scale_, 220*self.dimens_.scale_),
+         text = "每人手里发两张牌，如果您下注买到的第三\n张牌点数在您手牌点数之间，或三张牌点数\n相同，那么您将赢得相应积分，牌型不同积\n分倍数也不同。",
+    })
+    normalLabel:setAnchorPoint(ccp(0.5,0.5))
+    normalLabel:setPosition(0, self.dimens_:getDimens(-20))
+    self.normalHelp:addView(normalLabel)
+
+    self.islandHelp = JJViewGroup.new()
+    self:addView(self.islandHelp)
+
+    self.islandTitle = SegmentedButton.new({
+        onImage = "img/interim/ui/island_help_title_1.png",
+        offImage = "img/interim/ui/island_help_title_2.png"
+    })
+    self.islandHelp:addView(self.islandTitle)
+    self.islandTitle:setPosition(self.dimens_:getDimens(-5), self.dimens_:getDimens(120))
+    self.islandTitle:setScale(self.dimens_.scale_)
+    self.islandTitle.delegate = self
+
+    self.treasureNode = JJViewGroup.new()
+    self.islandHelp:addView(self.treasureNode)
+
+    self.treasureLabel_1 = self:createTreasureLabel("五张同花顺：总奖池0%宝藏")
+    self.treasureLabel_1:setPosition(0, self.dimens_:getDimens(70))
+    self.treasureNode:addView(self.treasureLabel_1)
+
+    self.treasureLabel_2 = self:createTreasureLabel("四条A/四条J：总奖池0%宝藏")
+    self.treasureLabel_2:setPosition(0, self.dimens_:getDimens(20))
+    self.treasureNode:addView(self.treasureLabel_2)
+
+    self.treasureLabel_3 = self:createTreasureLabel("四张同花顺：总奖池0%宝藏")
+    self.treasureLabel_3:setPosition(0, self.dimens_:getDimens(-30))
+    self.treasureNode:addView(self.treasureLabel_3)
+
+    self.treasureLabel_4 = self:createTreasureLabel("普通四条：总奖池0%宝藏")
+    self.treasureLabel_4:setPosition(0, self.dimens_:getDimens(-80))
+    self.treasureNode:addView(self.treasureLabel_4)
+
+    self.treasureNode:setPosition(0, self.dimens_:getDimens(-20))
+
+    self.islandLabel = jj.ui.JJLabel.new({
+        fontSize = 22*self.dimens_.scale_,
+        color = ccc3(252, 211, 97),
+       -- viewSize = CCSize(500*self.dimens_.scale_, 220*self.dimens_.scale_),
+        text = "每人手里发两张牌，如果您下注买到的第三\n张牌点数在您手牌点数之间，或三张牌点数\n相同，那么您将赢得相应积分，牌型不同积\n分倍数也不同。",
+    })
+    self.islandLabel:setAnchorPoint(ccp(0.5,0.5))
+    self.islandLabel:setPosition(0, self.dimens_:getDimens(0))
+    self.islandHelp:addView(self.islandLabel)
+    self.islandLabel:setVisible(false)
+
+    self:showIslandHelp()
+
+    self:setTouchEnable(true)
+end
+
+function HelpView:onSegmentStatusChanged(button, status)
+    if self.islandHelp:isVisible() ~= true then
+        return
+    end
+
+    if status == true then
+        self:showGameRule()
+    else
+        self:showTreasureHelp()
+    end
+end
+
+function HelpView:reloadData()
+    local gameData = GameDataContainer:getGameData(INTERIM_MATCH_ID)
+
+    if gameData.property.isTourny == true then
+        self:showNormalHelp()
+    else
+        self:showIslandHelp()
+
+     --   self:showNormalHelp()
+    end
+
+    local property = gameData.property
+    local rate = property.fiveFlushRewardRate*100
+    local text = "五张同花顺：总奖池" .. rate .. "%宝藏"
+    self.treasureLabel_1:setText(text)
+
+    rate = property.AJ4RewardRate*100
+    text = "四条A/四条J：总奖池" .. rate .. "%宝藏"
+    self.treasureLabel_2:setText(text)
+
+    rate = property.flushRewardRate*100
+    text = "四张同花顺：总奖池" .. rate .. "%宝藏"
+    self.treasureLabel_3:setText(text)
+
+    rate = property.normal4RewardRate*100
+    text = "普通四条：总奖池" .. rate .. "%宝藏"
+    self.treasureLabel_4:setText(text)
+end
+
+function HelpView:createTreasureLabel(string)
+    local treasureLabel = jj.ui.JJLabel.new({
+        fontSize = 25*self.dimens_.scale_,
+        color = ccc3(252, 211, 97),
+        viewSize = CCSize(430*self.dimens_.scale_, 220*self.dimens_.scale_),
+        text = string,
+        align = ui.TEXT_VALIGN_CENTER
+    })
+    treasureLabel:setAnchorPoint(ccp(0.5,0.5))
+    return treasureLabel
+end
+
+function HelpView:onTouchBegan(x, y)
+    if self:isTouchInside(x, y) == true and self.bTouchEnable_ then
+        self:setTouchedIn(true)
+        local pos = self:convertToNodeSpace(ccp(x, y))
+        --print("x y " .. pos.x .. " " .. pos.y)
+        if pos.x > 186*self.dimens_.scale_
+         and pos.y > 108*self.dimens_.scale_ then
+            self.parentView:hideHelpView()
+            SoundManager:playEffect(INTERIM_SOUND.BUTTON)
+        
+        end
+
+        return true
+    end
+    return false
+end
+
+function HelpView:showNormalHelp()
+    self.background_2:setVisible(true)
+    self.background:setVisible(false)
+    self.normalHelp:setVisible(true)
+    self.islandHelp:setVisible(false)
+end
+
+function HelpView:showIslandHelp()
+    self.background_2:setVisible(false)
+    self.background:setVisible(true)
+    self.normalHelp:setVisible(false)
+    self.islandHelp:setVisible(true) 
+
+    self.islandTitle:setSwitchStatus(true)
+
+    self:showGameRule()
+end
+
+function HelpView:showGameRule()
+    self.islandLabel:setVisible(true)
+    self.treasureNode:setVisible(false)
+end
+
+function HelpView:showTreasureHelp( ... )
+    self.treasureNode:setVisible(true)
+    self.islandLabel:setVisible(false)
+end
+
+return HelpView

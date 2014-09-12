@@ -1,0 +1,1 @@
+{"ware_name":"岛屿英雄赛门票","ico":"108715.jpg","ware_explain":"可以报名每日岛屿英雄赛，本物品还可在合成炉中兑换成金币","status":0,"merit_ware_intro":"","ware_introduction":"任意岛屿赛中都有机会获得岛屿英雄赛门票，也可到shop.jj.cn进行购买","composite":0,"last_update":1402394096,"reward_explain":"","ware_id":8,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:17","reward":0}

@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="egame_fee_title">欢迎使用爱游戏充值(V2.3.2.0)</string>
+	<string name="egame_fee_card">请选择充值卡面额</string>
+	<string name="egame_fee_cmcard">移动充值卡</string>
+	<string name="egame_fee_cucard">联通充值卡</string>
+	<string name="egame_fee_ctcard">电信充值卡</string>
+	<string name="egame_fee_tip">请确认您选择的充值卡实际面额和实际的充值卡面额一致，否则会导致消费不成功或余额丢失</string>
+	<string name="egame_fee_sy">10元</string>
+	<string name="egame_fee_esy">20元</string>
+	<string name="egame_fee_ssy">30元</string>
+	<string name="egame_fee_wsy">50元</string>
+	<string name="egame_fee_yby">100元</string>
+	<string name="egame_fee_sby">300元</string>
+	<string name="egame_fee_wby">500元</string>
+	<string name="egame_fee_enter_tip">请输入卡号和密码</string>
+	<string name="egame_fee_card_no">请输入充值卡号</string>
+	<string name="egame_fee_card_pwd">请输入充值卡密码</string>
+	<string name="egame_fee_confrim">确认支付</string>
+	<string name="egame_fee_tel_fare">话费支付(推荐)</string>
+	<string name="egame_fee_szpay">充值卡支付</string>
+	<string name="egame_fee_alipay">支付宝支付</string>
+</resources>

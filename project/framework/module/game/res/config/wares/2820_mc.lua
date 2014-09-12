@@ -1,0 +1,1 @@
+{"ware_name":"德州杯具之星门票","ico":"108701.jpg","ware_explain":"参加比赛总是就差了那么一点点火候和奖励失之交臂？别气馁，谁说只有打进前几才有奖励，杯具之星也是一个超级响亮的名号哟！只要集齐一定数量的门票，就能参加每周的安慰赛。屡败屡战，嗷嗷的金币等着你！","status":0,"merit_ware_intro":"可参加每周五晚明日之星大赛","ware_introduction":"德州1W及以上锦标赛未进入钱圈获得","composite":0,"last_update":1402392873,"reward_explain":"","ware_id":2820,"mobile_ware_type":1,"ctime":"2012-11-29 17:08:15","reward":0}

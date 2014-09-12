@@ -1,0 +1,1 @@
+{"ware_name":"翡翠权杖","ico":"108665.jpg","ware_explain":"欢乐斗牌技的象征物品，可报名最高端题材赛事和回馈比赛","status":0,"merit_ware_intro":"","ware_introduction":"可在大型的题材赛事，回馈赛事中获得","composite":0,"last_update":1402389241,"reward_explain":"","ware_id":1197,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:18","reward":0}

@@ -1,0 +1,1 @@
+{"ware_name":"麻将坯子","ico":"","ware_explain":"能在合成炉中随机制成麻将牌，但失败几率很大。","status":0,"reward_explain":"","ware_introduction":"","ctime":"2012-04-09 16:24:17","merit_ware_intro":"","last_update":1337569439,"ware_id":102,"mobile_ware_type":1,"composite":0,"reward":0}

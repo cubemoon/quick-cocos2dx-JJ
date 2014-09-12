@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#dfdfdf"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#dfdfdf" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/egamewebfee_top"
+            android:gravity="center"
+            android:text="@string/egame_fee_title"
+            android:textColor="#fff"
+            android:textSize="14dip" />
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/egamewebfee_close" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#dfdfdf"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/charge_money"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dip"
+                android:paddingTop="10dip"
+                android:textColor="#000000"
+                android:textSize="14dip" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/egamewebfee_titlebar"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dip"
+                android:text="@string/egame_fee_card"
+                android:textColor="#000000"
+                android:textSize="14dip" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/cm_card"
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/egamewebfee_listseled"
+                    android:gravity="center"
+                    android:paddingLeft="10dip"
+                    android:text="@string/egame_fee_cmcard"
+                    android:textColor="#000000"
+                    android:textSize="14dip" />
+
+                <TextView
+                    android:id="@+id/cu_card"
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/egamewebfee_list_selector"
+                    android:gravity="center"
+                    android:paddingLeft="10dip"
+                    android:text="@string/egame_fee_cucard"
+                    android:textColor="#000000"
+                    android:textSize="14dip" />
+
+                <TextView
+                    android:id="@+id/ct_card"
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/egamewebfee_list_selector"
+                    android:gravity="center"
+                    android:text="@string/egame_fee_ctcard"
+                    android:textColor="#000000"
+                    android:textSize="14dip" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="3dip"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:paddingTop="3dip"
+                android:text="@string/egame_fee_tip"
+                android:textColor="#ff0000"
+                android:textSize="14dip" />
+
+            <Button
+                android:id="@+id/card_ten"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:background="@drawable/egamewebfee_list_selector"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dip"
+                android:text="@string/egame_fee_sy"
+                android:textColor="#000000"
+                android:textSize="14dip" />
+
+            <Button
+                android:id="@+id/card_twenty"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:background="@drawable/egamewebfee_list_selector"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dip"
+                android:text="@string/egame_fee_esy"
+                android:textColor="#000000"
+                android:textSize="14dip" />
+
+            <Button
+                android:id="@+id/card_thirty"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:background="@drawable/egamewebfee_list_selector"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dip"
+                android:text="@string/egame_fee_ssy"
+                android:textColor="#000000"
+                android:textSize="14dip" />
+
+            <Button
+                android:id="@+id/card_fifty"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:background="@drawable/egamewebfee_list_selector"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dip"
+                android:text="@string/egame_fee_wsy"
+                android:textColor="#000000"
+                android:textSize="14dip" />
+
+            <Button
+                android:id="@+id/card_hundred"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:background="@drawable/egamewebfee_list_selector"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dip"
+                android:text="@string/egame_fee_yby"
+                android:textColor="#000000"
+                android:textSize="14dip" />
+
+            <Button
+                android:id="@+id/card_three_hundred"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:background="@drawable/egamewebfee_list_selector"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dip"
+                android:text="@string/egame_fee_sby"
+                android:textColor="#000000"
+                android:textSize="14dip" />
+
+            <Button
+                android:id="@+id/card_five_hundred"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:background="@drawable/egamewebfee_list_selector"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dip"
+                android:text="@string/egame_fee_wby"
+                android:textColor="#000000"
+                android:textSize="14dip" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/egamewebfee_titlebar"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dip"
+                android:text="@string/egame_fee_enter_tip"
+                android:textColor="#000000"
+                android:textSize="14dip" />
+
+            <EditText
+                android:id="@+id/card_number"
+                android:layout_width="fill_parent"
+                android:layout_height="35dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/egamewebfee_input_bg"
+                android:hint="@string/egame_fee_card_no"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:textSize="14dip" />
+
+            <EditText
+                android:id="@+id/card_pwd"
+                android:layout_width="fill_parent"
+                android:layout_height="35dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/egamewebfee_input_bg"
+                android:hint="@string/egame_fee_card_pwd"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:textSize="14dip" />
+
+            <Button
+                android:id="@+id/card_confim"
+                android:layout_width="130dip"
+                android:layout_height="30dip"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/egamewebfee_btn_green_selector"
+                android:gravity="center"
+                android:text="@string/egame_fee_confrim"
+                android:textColor="#4a8737"
+                android:textSize="14dip" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:background="@drawable/egamewebfee_top_line" />
+
+</RelativeLayout>

@@ -1,0 +1,1 @@
+{"ware_name":"木质权杖","ico":"94189.png","ware_explain":"欢乐斗地主荣誉物品，可报名兑换10参赛积分或报名参加欢乐斗的系列回馈赛。","status":0,"merit_ware_intro":"","ware_introduction":"通过欢乐斗中高端锦标赛和岛屿赛获得","composite":0,"last_update":1402387742,"reward_explain":"","ware_id":1198,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:18","reward":0}

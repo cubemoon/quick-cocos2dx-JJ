@@ -1,0 +1,45 @@
+--[[
+定义服务端 MatchView 的参数
+]]
+MatchViewDef = {}
+
+MatchViewDef.INFO_TYPE_MATCH = 3
+MatchViewDef.INFO_TYPE_PHASE = 4
+MatchViewDef.INFO_TYPE_STAGE = 5
+MatchViewDef.INFO_TYPE_BOUT = 6
+MatchViewDef.INFO_TYPE_ROUND = 7
+MatchViewDef.INFO_TYPE_TABLE = 8
+
+MatchViewDef.ATTR_TYPE_MATCH_PLAYER_COUNT = 103   --参赛总单元（参赛总人数）
+MatchViewDef.ATTR_TYPE_MATCH_POTCOUNT = 108   --总奖池
+
+MatchViewDef.ATTR_TYPE_PHASE_INDEX = 200   --第几阶段
+MatchViewDef.ATTR_TYPE_PHASE_NAME = 203   --本阶段名称
+
+MatchViewDef.ATTR_TYPE_STAGE_RULE = 301   --赛制
+MatchViewDef.ATTR_TYPE_STAGE_BOUT_COUNT = 302   --轮数
+MatchViewDef.ATTR_TYPE_STAGE_WINNER_COUNT = 303   --晋级人数
+MatchViewDef.ATTR_TYPE_STAGE_OVER_WHEN_LEFT_UNIT_COUNT = 304   --截止人数
+MatchViewDef.ATTR_TYPE_STAGE_GAMECOUNT_AWARD_INFO = 306   --岛屿盘数奖励信息
+MatchViewDef.ATTR_TYPE_STAGE_TASK_INFO = 307   --岛屿任务信息
+MatchViewDef.ATTR_TYPE_STAGE_BASE_RAISE_TIME = 317   --基数增长时间
+MatchViewDef.ATTR_TYPE_STAGE_RANK_TYPE = 326   --1：排名；0：不排名,即1显示颁奖倒计时，0不显示
+
+MatchViewDef.ATTR_TYPE_STAGE_PROMOTION_AVERAGE_TIME = 327   --平均时长
+MatchViewDef.ATTR_TYPE_STAGE_PROMOTION_FINISH_PERCENT = 328   --完成百分比
+MatchViewDef.ATTR_TYPE_STAGE_PROMOTION_SCORE = 329   --预计晋级分数
+MatchViewDef.ATTR_TYPE_STAGE_PROMOTION_STAGE_COUNTDOWN_PECENT_MAX = 331   --最大自由显示的百分比
+
+MatchViewDef.ATTR_TYPE_BOUT_PROMOTION_AVERAGE_TIME = 416   --决赛阶段平均时长
+MatchViewDef.ATTR_TYPE_BOUT_PROMOTION_FINISH_PERCENT = 417   --完成百分比
+MatchViewDef.ATTR_TYPE_BOUT_PROMOTION_SCORE = 418   --预计晋级分数
+MatchViewDef.ATTR_TYPE_STAGE_PROMOTION_BOUT_COUNTDOWN_PECENT_MAX = 420   --最大自由显示的百分比
+
+MatchViewDef.ATTR_TYPE_MATCHINFO_ENUM_BOUT_INDEX = 400   --用于记录每轮开始
+MatchViewDef.ATTR_TYPE_BOUT_PROMOTE_RULE = 407   --晋级规则
+
+MatchViewDef.ATTR_TYPE_ROUND_GAME_COUNT = 501   --每轮几局
+MatchViewDef.ATTR_TYPE_ROUND_OUT_SCORE = 506   --低于多少淘汰
+
+
+return MatchViewDef

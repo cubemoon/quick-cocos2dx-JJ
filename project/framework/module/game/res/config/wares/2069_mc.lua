@@ -1,0 +1,1 @@
+{"ware_name":"百胜卡","ico":"94197.png","ware_explain":"100张百胜卡可以合成1个百胜之王，并可兑换30w游戏金币","status":0,"merit_ware_intro":"100张百胜卡可以合成1个百胜之王，并可兑换30w游戏金币","ware_introduction":"100张百胜卡可以合成1个百胜之王，并可兑换30w游戏金币","composite":0,"last_update":1398322549,"reward_explain":"","ware_id":2069,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:21","reward":0}

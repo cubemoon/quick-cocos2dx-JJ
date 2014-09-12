@@ -1,0 +1,1 @@
+{"ware_name":"地主玉扳指","ico":"94184.png","ware_explain":"地主身份的象征，戴在身上可带来好运。可以用于参加手机专场斗地主回馈赛","status":0,"merit_ware_intro":"可用于参加手机专场回馈赛","ware_introduction":"可在“斗地主”“欢乐斗地主”比赛场的收费锦标赛获得。","composite":0,"last_update":1398321485,"reward_explain":"","ware_id":1983,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:20","reward":0}

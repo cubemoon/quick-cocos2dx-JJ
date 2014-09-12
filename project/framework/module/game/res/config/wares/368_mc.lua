@@ -1,0 +1,1 @@
+{"ware_name":"幸运四叶草","ico":"108712.jpg","ware_explain":"四叶草是幸运的使者，在赢三张中高级场都有可能得到，积累到一定的数量就可以参加高额奖励的幸运草系列赢三张回馈赛。","status":0,"merit_ware_intro":"","ware_introduction":"在赢三张中高级场打够局数就送","composite":0,"last_update":1402393859,"reward_explain":"","ware_id":368,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:17","reward":0}

@@ -1,0 +1,1 @@
+{"ware_name":"50元联通话费","ico":"","ware_explain":"可兑换50元联通话费，兑换券有效期为300小时，请抓紧时间兑换。注：该物品由联通负责发放。","status":0,"merit_ware_intro":"","ware_introduction":"","composite":0,"last_update":1398322196,"reward_explain":"奖品由中国联通沃游戏统一发放。","ware_id":3699,"mobile_ware_type":0,"ctime":"2013-07-01 19:03:11","reward":1}

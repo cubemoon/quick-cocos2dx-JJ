@@ -1,0 +1,1 @@
+{"ware_name":"德州每周之星门票","ico":"108748.jpg","ware_explain":"最顶级的德州扑克锦标赛，每周六晚上20:30，拿票来参赛吧！  （目前需要4张票才能参加每周之星的比赛，每周之星采用奖金池的方案，总奖池为参赛人数*50000金币）","status":0,"merit_ware_intro":"","ware_introduction":"参加大型比赛获得的门票。","composite":0,"last_update":1402397446,"reward_explain":"","ware_id":1747,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:20","reward":0}

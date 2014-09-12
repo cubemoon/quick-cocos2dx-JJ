@@ -1,0 +1,1 @@
+{"ware_name":"黄金鼎","ico":"108690.jpg","ware_explain":"拥兵一方的黄金斗士勋章。赖斗荣誉物品。","status":0,"merit_ware_intro":"","ware_introduction":"可通过每日黄金鼎争夺赛、赖斗10000金PK赛、赖斗王选拔赛-决赛、每日黄金鼎精英赛获得\n","composite":0,"last_update":1402394405,"reward_explain":"","ware_id":1188,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:18","reward":0}

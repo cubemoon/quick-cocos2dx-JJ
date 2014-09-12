@@ -1,0 +1,1 @@
+{"ware_name":"飘香粽子","ico":"104060.jpg","ware_explain":"每个飘香粽子可合成500金币，物品有效时间至2014-06-11。","status":0,"reward_explain":"","ware_introduction":"","composite":1,"last_update":1401173972,"merit_ware_intro":"","ware_id":4529,"mobile_ware_type":1,"ctime":"2014-05-27 14:59:32","reward":0}

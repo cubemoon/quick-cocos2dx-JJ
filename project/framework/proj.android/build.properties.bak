@@ -1,0 +1,13 @@
+sdk.dir=D\:/dev/SDK
+sdk.folder=D\:/dev/SDK/platforms/android-17
+android.tools=${sdk.folder}/tools
+apk.sdk.home=D\:/dev/SDK
+apk.tools=${apk.sdk.home}/tools
+platform.tools=${apk.sdk.home}/platform-tools
+password=jjmatch
+key.store=keystore/public.keystore
+key.alias=jjmatch
+key.store.password=jjmatch
+key.alias.password=jjmatch
+
+

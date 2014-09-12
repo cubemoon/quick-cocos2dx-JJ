@@ -1,0 +1,1 @@
+{"ware_name":"二人雀神达标卡","ico":"108740.jpg","ware_explain":"200张二人雀神达标卡可以合成100000金币！","status":0,"merit_ware_intro":"200张可合成100000金币哦","ware_introduction":"20000金币以上达标赛失败者可获得","composite":1,"last_update":1402395402,"reward_explain":"","ware_id":2104,"mobile_ware_type":1,"ctime":"2012-06-26 13:57:28","reward":0}

@@ -1,0 +1,136 @@
+
+InterimUtilDefine = {}
+
+InterimUtilDefine.INTERIM_RESULT = 
+{
+    ErrorRuler         = 0,    --错误牌型
+    Kanormal           = 1,    --普通2
+    Kabreak            = 2,    --断当2
+    Kaout              = 3,    --卡飞3
+    Kapillar           = 4,    --撞柱3
+    Kain               = 5,    --卡中3
+    Kamid              = 6,    --卡当3
+    Kain2              = 7,    --双卡
+    Kain3              = 8,    --三卡
+    Kainth2            = 9,    --同花双卡
+    Kainth3            = 10,   --同花三卡
+    Kasame             = 11,   --卡豹子3
+    Threesamestraight  = 12,   --同花顺3
+    Foursame           = 13,   --条4
+    Foursamestraight   = 14,   --同花顺4
+    Fivesamestraight   = 15,   --同花顺5
+    Skysamestraight    = 16,   --顶天同花顺5
+    AJFoursame         = 17,   --AJ4条 4
+    Sickstraight       = 18,   --有缺陷的同花4顺（为3卡中奖设计）  
+    Kain4              = 19    --四卡
+}
+    InterimUtilDefine.INTERIM_OPPONENT_CARD_SCALE = 1
+    InterimUtilDefine.INTERIM_MY_CARD_SCALE = 1
+
+    InterimUtilDefine.INTERIM_CARD_BACK = "img/interim/cards/poker_card_bg.png"
+
+    InterimUtilDefine.INTERIM_CARD_IMAGE = 
+    { 
+      "img/interim/cards/poker_card_diamond_1.png"
+    , "img/interim/cards/poker_card_diamond_2.png"
+    , "img/interim/cards/poker_card_diamond_3.png"
+    , "img/interim/cards/poker_card_diamond_4.png"
+    , "img/interim/cards/poker_card_diamond_5.png"
+    , "img/interim/cards/poker_card_diamond_6.png"
+    , "img/interim/cards/poker_card_diamond_7.png"
+    , "img/interim/cards/poker_card_diamond_8.png"
+    , "img/interim/cards/poker_card_diamond_9.png"
+    , "img/interim/cards/poker_card_diamond_10.png"
+    , "img/interim/cards/poker_card_diamond_j.png"
+    , "img/interim/cards/poker_card_diamond_q.png"
+    , "img/interim/cards/poker_card_diamond_k.png"
+    , "img/interim/cards/poker_card_club_1.png"
+    , "img/interim/cards/poker_card_club_2.png"
+    , "img/interim/cards/poker_card_club_3.png"
+    , "img/interim/cards/poker_card_club_4.png"
+    , "img/interim/cards/poker_card_club_5.png"
+    , "img/interim/cards/poker_card_club_6.png"
+    , "img/interim/cards/poker_card_club_7.png"
+    , "img/interim/cards/poker_card_club_8.png"
+    , "img/interim/cards/poker_card_club_9.png"
+    , "img/interim/cards/poker_card_club_10.png"
+    , "img/interim/cards/poker_card_club_j.png"
+    , "img/interim/cards/poker_card_club_q.png"
+    , "img/interim/cards/poker_card_club_k.png"
+    , "img/interim/cards/poker_card_heart_1.png"
+    , "img/interim/cards/poker_card_heart_2.png"
+    , "img/interim/cards/poker_card_heart_3.png"
+    , "img/interim/cards/poker_card_heart_4.png"
+    , "img/interim/cards/poker_card_heart_5.png"
+    , "img/interim/cards/poker_card_heart_6.png"
+    , "img/interim/cards/poker_card_heart_7.png"
+    , "img/interim/cards/poker_card_heart_8.png"
+    , "img/interim/cards/poker_card_heart_9.png"
+    , "img/interim/cards/poker_card_heart_10.png"
+    , "img/interim/cards/poker_card_heart_j.png"
+    , "img/interim/cards/poker_card_heart_q.png"
+    , "img/interim/cards/poker_card_heart_k.png"
+    , "img/interim/cards/poker_card_spade_1.png"
+    , "img/interim/cards/poker_card_spade_2.png"
+    , "img/interim/cards/poker_card_spade_3.png"
+    , "img/interim/cards/poker_card_spade_4.png"
+    , "img/interim/cards/poker_card_spade_5.png"
+    , "img/interim/cards/poker_card_spade_6.png"
+    , "img/interim/cards/poker_card_spade_7.png"
+    , "img/interim/cards/poker_card_spade_8.png"
+    , "img/interim/cards/poker_card_spade_9.png"
+    , "img/interim/cards/poker_card_spade_10.png"
+    , "img/interim/cards/poker_card_spade_j.png"
+    , "img/interim/cards/poker_card_spade_q.png"
+    , "img/interim/cards/poker_card_spade_k.png" 
+}
+
+InterimUtilDefine.INTERIM_SOUND = {
+    BGMUSIC = "sound/interim/b_bkmusic.mp3",
+
+    SHUFFLE = "sound/interim/b_ShuffCard.mp3",
+    KADANG = "sound/interim/b_2XPrize.mp3",
+    KASAME = "sound/interim/b_kasame.mp3",
+    PASS = "sound/interim/b_Pass.mp3",
+    KAIN = "sound/interim/b_Kain.mp3",
+    KAOUT = "sound/interim/b_Kaout.mp3",
+    KAPILLAR = "sound/interim/b_Kapillar.mp3",
+    ALLPRIZE = "sound/interim/b_AllPrize.mp3",
+    GAMB = "sound/interim/b_Gamb.mp3",
+    GAMB4SAME = "sound/interim/b_Gamb4same.mp3",
+    GAMBSTRAIGHT = "sound/interim/b_Gambstraight.mp3",
+    GAMBLOSS = "sound/interim/b_Gambloss.mp3",
+
+    BUTTON = "sound/common/common_s_click.mp3",
+
+    GRAB = "sound/interim/b_Crab.mp3",
+
+    --TIMER = "sound/interim/b_LaterTime.mp3",
+    TIMER = "sound/interim/b_countDown.ogg",
+}
+
+InterimUtilDefine.GAME_SFX_BG = {
+    BG_SOUND = "sound/lordunion/lord_play_bg1.ogg",
+    BG_PROMOTE = "sound/lordunion/lord_play_bg1.ogg",
+    BG_MULTI_INC = "sound/lordunion/lord_play_bg2.ogg",
+}
+
+InterimUtilDefine.INTERIM_PLAYER_STATUS_EMPTY = 1
+InterimUtilDefine.INTERIM_PLAYER_STATUS_ENGAGED = 2
+InterimUtilDefine.INTERIM_PLAYER_STATUS_STANDBY = 3
+InterimUtilDefine.INTERIM_PLAYER_STATUS_FOLD = 4
+
+InterimUtilDefine.InitCardAck = 1
+InterimUtilDefine.CoinAck = 2
+InterimUtilDefine.OverAck = 3
+InterimUtilDefine.CurPrizePoolAck = 4
+InterimUtilDefine.ConGambAck = 5
+InterimUtilDefine.GambEndAck = 6                  -- 有人获得博彩消息
+InterimUtilDefine.CurPrizePoolNoteAck = 7
+InterimUtilDefine.ChangeScoreAck = 8
+InterimUtilDefine.DivideTableCoinAck = 9
+
+InterimUtilDefine.INTERIM_POPVIEW_NONE = 1
+InterimUtilDefine.INTERIM_POPVIEW_MATCHAWARD = 13
+
+return InterimUtilDefine

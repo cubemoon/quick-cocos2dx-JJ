@@ -1,0 +1,1 @@
+{"ware_name":"手机签到卡","ico":"","ware_explain":"可用于参加手机客户端各个游戏的签到赛！史前最容易赚金的比赛哦！注：签到卡仅当日有效！","status":0,"reward_explain":"","ware_introduction":"JJ比赛经验小于100000的用户每日登陆手机客户端比赛有机会获得","ctime":"2012-06-07 14:19:26","merit_ware_intro":"","last_update":1361950119,"ware_id":2362,"mobile_ware_type":1,"composite":0,"reward":0}

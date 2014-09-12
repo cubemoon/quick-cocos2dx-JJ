@@ -1,0 +1,1 @@
+{"ware_name":"德州销魂票","ico":"108751.jpg","ware_explain":"销魂一战，谁与争锋！德州扑克金戒指大战高级门票，预赛第1名获得。凭此票报名金戒指大战初始筹码15W。","status":0,"merit_ware_intro":"","ware_introduction":"德州扑克金戒指大战高级门票，预赛第1名获得。凭此票报名金戒指大战初始筹码15W。","composite":0,"last_update":1402397562,"reward_explain":"","ware_id":1631,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:19","reward":0}

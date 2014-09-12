@@ -1,0 +1,1 @@
+{"ware_name":"特价大海豚","ico":"","ware_explain":"可兑换JJ大海豚一个PS:本物品自获得之日起3天失效，请及时使用，以免造成不必要的损失。","status":0,"merit_ware_intro":"","ware_introduction":"","composite":0,"last_update":1398320716,"reward_explain":"您兑奖后，我们将在3个工作日把您所兑换的奖品采取邮政或快递方式发放，请当着快递员面验货后在签收，发现任何外观损坏或与兑奖物品不符，请拒绝签收并及时联系在线客服；一旦签收，无法退换。","ware_id":3975,"mobile_ware_type":0,"ctime":"2013-11-12 11:39:24","reward":2}

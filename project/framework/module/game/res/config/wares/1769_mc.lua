@@ -1,0 +1,1 @@
+{"ware_name":"翡翠粒","ico":"108741.jpg","ware_explain":"麻将牌技的象征物。10个翡翠粒可以兑换一块翡翠。","status":0,"merit_ware_intro":"","ware_introduction":"参加二人麻将岛屿赛，打满一定局数可以获得","composite":1,"last_update":1402395435,"reward_explain":"","ware_id":1769,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:20","reward":0}

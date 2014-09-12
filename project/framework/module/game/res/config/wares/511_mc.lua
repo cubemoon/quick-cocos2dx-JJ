@@ -1,0 +1,1 @@
+{"ware_name":"五张百元移动充值卡","ico":"94174.jpg","ware_explain":"可兑换五张移动百元手机充值卡。PS:本物品自获得之时起，于160小时后消失。请您抓紧时间兑奖。","status":0,"merit_ware_intro":"","ware_introduction":"","composite":0,"last_update":1398320554,"reward_explain":"您兑奖后，我们会在3个工作日直充您绑定的手机。","ware_id":511,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:17","reward":1}

@@ -1,0 +1,97 @@
+
+local SwitchButton = class("SwitchButton", jj.ui.JJImage)
+
+
+function SwitchButton:ctor(params)
+	SwitchButton.super.ctor(self, params)
+
+	self.onImage = "img/interim/ui/off.png"
+	self.offImage = "img/interim/ui/on.png"
+
+	if params then
+		if params.onImage ~= nil then
+			self.onImage = params.onImage
+		end
+		if params.offImage ~= nil then
+			self.offImage = params.offImage
+		end
+	end
+
+	local texture = CCTextureCache:sharedTextureCache():addImage(self.onImage)
+    self:setTexture(texture)
+	local rect = CCRect:new()
+    rect.size = texture:getContentSize()
+    self:setTextureRect(rect)
+
+	self:setTouchEnable(true)
+
+	self.switchOn = true
+
+	self.delegate = nil
+end
+
+function SwitchButton:setSwitchStatus(var)
+	JJLog.i("****************************stand switchY")
+	JJLog.i("****************************self.onImage" .. self.onImage)
+	self.switchOn = var
+	local image = self.onImage
+	if var == false then
+		image = self.offImage
+	end
+	local texture = CCTextureCache:sharedTextureCache():addImage(image)
+    self:setTexture(texture)
+end
+
+function SwitchButton:getSwitchStatus( ... )
+	return self.switchOn
+end
+
+function SwitchButton:onTouchBegan(x, y)
+	if self:isTouchInside(x, y) == true and self.bTouchEnable_ then
+		self:setTouchedIn(true)
+		return true
+	end
+
+	return false
+end
+
+function SwitchButton:onTouchEnded(x, y)
+	if self:isTouchInside(x, y) == true and self.bTouchEnable_ then
+		self:setTouchedIn(true)
+	--	JJLog.i("SwitchButton onTouchEnded")
+		if self.switchOn == false then
+			self:setSwitchStatus(true)
+		else
+			self:setSwitchStatus(false)
+		end
+		if self.delegate ~= nil then
+			self.delegate:onSwitchStatusChanged(self, self.switchOn)
+		end
+		return true
+	end
+	return false
+end
+
+function SwitchButton:setOnImage(image)
+	if image == nil then
+		return
+	end
+	self.onImage = image
+	if self.switchOn == true then
+		local texture = CCTextureCache:sharedTextureCache():addImage(self.onImage)
+    	self:setTexture(texture)
+	end
+end
+
+function SwitchButton:setOffImage(image)
+	if image == nil then
+		return
+	end
+	self.offImage = image
+	if self.switchOn == false then
+		local texture = CCTextureCache:sharedTextureCache():addImage(self.offImage)
+    	self:setTexture(texture)
+	end
+end
+
+return SwitchButton

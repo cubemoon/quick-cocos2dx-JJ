@@ -1,0 +1,1 @@
+{"ware_name":"手机德州体验卡","ico":"108723.jpg","ware_explain":"此卡为手机德州发起的邀请函，诚邀你的到来，届时可免费参与，我们特别为您准备的邀请赛，奖励丰厚，就等你来拿了！更多惊喜请官网下载客户端吧。有效期至2013-12-11 00:00:00。","status":0,"merit_ware_intro":"","ware_introduction":"手机系统发放","composite":0,"last_update":1402394668,"reward_explain":"0","ware_id":4036,"mobile_ware_type":1,"ctime":"2013-11-18 19:18:33","reward":0}

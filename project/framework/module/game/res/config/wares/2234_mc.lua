@@ -1,0 +1,1 @@
+{"ware_name":"赖斗王选拔复赛门票","ico":"56147.jpg","ware_explain":"拥有此票可参与每周六晚上20:00的“赖斗王选拔复赛”和每周日晚上20:18的“白金鼎”大师赛。","status":0,"merit_ware_intro":"","ware_introduction":"可以在赖斗王预赛中获得","composite":1,"last_update":1389943671,"reward_explain":"","ware_id":2234,"mobile_ware_type":1,"ctime":"2013-11-05 11:53:09","reward":0}

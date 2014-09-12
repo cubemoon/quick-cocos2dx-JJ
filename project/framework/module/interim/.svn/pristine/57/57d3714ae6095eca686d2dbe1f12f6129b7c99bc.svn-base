@@ -1,0 +1,127 @@
+local AnimationFactory = class("AnimationFactory")
+
+function AnimationFactory:ctor()
+	display.addSpriteFramesWithFile("img/interim/animate/fall_leaves.plist",
+                                     "img/interim/animate/fall_leaves.png")
+    display.addSpriteFramesWithFile("img/interim/animate/hit.plist",
+                                     "img/interim/animate/hit.png")
+    display.addSpriteFramesWithFile("img/interim/animate/hit_pillar.plist",
+                                     "img/interim/animate/hit_pillar.png")
+    display.addSpriteFramesWithFile("img/interim/animate/kabz.plist",
+                                     "img/interim/animate/kabz.png")
+    display.addSpriteFramesWithFile("img/interim/animate/kadang.plist",
+                                     "img/interim/animate/kadang.png")
+    display.addSpriteFramesWithFile("img/interim/animate/lottery_light.plist",
+                                     "img/interim/animate/lottery_light.png")
+    display.addSpriteFramesWithFile("img/interim/animate/fold.plist",
+                                     "img/interim/animate/fold.png")
+    
+end
+
+function AnimationFactory:createFallLeaves()
+	display.addSpriteFramesWithFile("img/interim/animate/fall_leaves.plist",
+                                     "img/interim/animate/fall_leaves.png")
+    local animation = display.getAnimationCache("fall")
+    if animation == nil then
+        local frames = display.newFrames("fall_%d.png", 1, 27)
+        animation = display.newAnimation(frames, 1 / 27)
+        display.setAnimationCache("fall", animation)
+    end
+    return animation
+end
+
+function AnimationFactory:createHit()
+	local animation = display.getAnimationCache("hit")
+    if animation == nil then
+        local frames = display.newFrames("hit_%d.png", 1, 9)
+        animation = display.newAnimation(frames, 0.6 / 9)
+        display.setAnimationCache("hit", animation)
+    end
+    return animation
+end
+
+function AnimationFactory:createHitPillar()
+	local animation = display.getAnimationCache("hit_p")
+    if animation == nil then
+        local frames = display.newFrames("hit_p_%d.png", 1, 9)
+        animation = display.newAnimation(frames, 0.6 / 9)
+        display.setAnimationCache("hit_p", animation)
+    end
+    return animation
+end
+
+function AnimationFactory:createKabz()
+	local animation = display.getAnimationCache("kabz")
+    if animation == nil then
+        local frames = display.newFrames("kabz_%d.png", 1, 21)
+        animation = display.newAnimation(frames, 1 / 27)
+        display.setAnimationCache("kabz", animation)
+    end
+    return animation
+end
+
+function AnimationFactory:createKadang()
+	local animation = display.getAnimationCache("kadang")
+    if animation == nil then
+        local frames = display.newFrames("kadang_%d.png", 1, 27)
+        animation = display.newAnimation(frames, 1 / 27)
+        display.setAnimationCache("kadang", animation)
+    end
+    return animation
+end
+
+function AnimationFactory:createLotteryLight()
+	local animation = display.getAnimationCache("ligtht")
+    if animation == nil then
+        local frames = display.newFrames("ligtht_%d.png", 1, 2)
+        animation = display.newAnimation(frames, 1)
+        display.setAnimationCache("ligtht", animation)
+    end
+    return animation
+end
+
+function AnimationFactory:createFold()
+    local animation = display.getAnimationCache("fold")
+    if animation == nil then
+        local frames = display.newFrames("fold_%d.png", 1, 11)
+        animation = display.newAnimation(frames, 0.6/11)
+        display.setAnimationCache("fold", animation)
+    end
+    return animation
+end
+
+function AnimationFactory:createGreenFrame()
+    local animation = display.getAnimationCache("green")
+    local imageFile = "img/interim/animate/green_fr/green_fr_"
+    local ext = ".png"
+    if animation == nil then
+        local array = CCArray:create()
+        for i = 1, 25 do
+            local fullPath = imageFile .. i .. ext
+            local frame = CCSpriteFrame:create(fullPath, CCRect(0, 0, 194, 223))
+            array:addObject(frame)
+        end
+        animation = CCAnimation:createWithSpriteFrames(array, 0.064)
+        display.setAnimationCache("green", animation)
+    end
+    return animation
+end
+
+function AnimationFactory:createRedFrame()
+    local animation = display.getAnimationCache("red")
+    local imageFile = "img/interim/animate/red_fr/red_fr_"
+    local ext = ".png"
+    if animation == nil then
+        local array = CCArray:create()
+        for i = 1, 25 do
+            local fullPath = imageFile .. i .. ext
+            local frame = CCSpriteFrame:create(fullPath, CCRect(0, 0, 194, 223))
+            array:addObject(frame)
+        end
+        animation = CCAnimation:createWithSpriteFrames(array, 0.064)
+        display.setAnimationCache("red", animation)
+    end
+    return animation
+end
+
+return AnimationFactory

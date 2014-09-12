@@ -1,0 +1,1 @@
+{"ware_name":"地主玉扳指胚子","ico":"94185.png","ware_explain":"未打磨的玉扳指胚子，可以合成玉扳指。10枚玉扳指胚子可合成一枚玉扳指！","status":0,"merit_ware_intro":"可用于参加手机专场回馈赛","ware_introduction":"可在“给力通吃岛、黯然销魂岛”等比赛获得","composite":1,"last_update":1398321502,"reward_explain":"","ware_id":1984,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:20","reward":0}

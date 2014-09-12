@@ -1,0 +1,451 @@
+
+local JJViewGroup = require("sdk.ui.JJViewGroup")
+local PlayerView = class("PlayerView", JJViewGroup)
+local PortraitView = require("interim.ui.view.PortraitView")
+local ProgressDialog = require("game.ui.view.ProgressDialog")
+local AnimationFactory = require("interim.util.AnimationFactory")
+local scheduler = require(cc.PACKAGE_NAME .. ".scheduler")
+
+function PlayerView:ctor(parentView)
+	PlayerView.super.ctor(self, parentView)
+	self.parentView = parentView
+	self.dimens_ = parentView.dimens_
+	self.theme_ = parentView.theme_
+    self:initView()
+end
+
+function PlayerView:setPlayerFrameClickListener(target, listener)
+	self.target = target
+	self.playerFrameClickListener = listener
+end
+
+function PlayerView:initView()
+	self.sitButton = nil
+	self.portrait = nil
+	self.portraitFrame = nil
+	self.userID = nil
+    self.playClick = false
+
+	local function onButtonClicked(view)
+		self.parentView:onPlayerClicked()
+	end
+	
+	local sitImage = "img/interim/ui/sit.png"
+	self.sitButton = jj.ui.JJButton.new({
+        images = {
+            normal = sitImage,   
+        },
+    })
+    self.sitButton.name = "sitButton"
+    self.sitButton:setAnchorPoint(ccp(0.5, 0.5))
+    self.sitButton:setPosition(0, 0)
+    self:addView(self.sitButton)
+    self.sitButton:setScale(self.dimens_.scale_)
+	self.sitButton:setOnClickListener(onButtonClicked)
+	self.sitButton:setVisible(true)
+
+	self.portraitFrame = jj.ui.JJImage.new({
+        image = "img/interim/ui/portrait_frame.png"
+      })
+	self.portraitFrame:setAnchorPoint(ccp(0.5, 0.5))
+    self.portraitFrame:setScale(self.dimens_.scale_)
+  	self.portraitFrame:setVisible(false)
+	self:addView(self.portraitFrame)
+	
+	self.portraitImage = "img/interim/common/player.png"
+	self.portrait = PortraitView.new({
+        image = self.portraitImage,
+      })
+    self.portrait:setAnchorPoint(ccp(0.5, 0.5))
+    self.portrait:setPosition(0, self.dimens_:getDimens(10))
+    self.portrait:setVisible(false)
+   	self.portrait:setScale(self.dimens_.scale_)
+   	self.portrait.parentView = self
+
+	self:addView(self.portrait)
+
+	self.progressBar = jj.ui.JJImage.new({
+        image = "img/interim/ui/time.png"
+      })
+	self:addView(self.progressBar)
+	self.progressBar:setAnchorPoint(ccp(0.0, 0.5))
+    self.progressBar:setScale(self.dimens_.scale_)
+  	self.progressBar:setVisible(true)
+  	self.progressBar:setEnableScissor(true)
+	self.progressBarViewSize = self.progressBar:getViewSize()
+	local viewSize = self.progressBar:getViewSize()
+	self.progressBar:setPosition(self.dimens_:getDimens(-viewSize.width/2) - 2 , self.dimens_:getDimens(70))
+	self.progressBar:setVisible(false)
+	self.progressBar:setViewSize(viewSize.width/2, viewSize.height)
+
+	self.progressBg = jj.ui.JJImage.new({
+        image = "img/interim/ui/time_bg.png"
+      })
+    self:addView(self.progressBg)
+    self.progressBg:setAnchorPoint(ccp(0.0, 0.5))
+    self.progressBg:setPosition(self.dimens_:getDimens(-viewSize.width/2) - 2, self.dimens_:getDimens(70))
+    self.progressBg:setScale(self.dimens_.scale_)
+    self.progressBg:setVisible(false)
+
+    self.progressLight = jj.ui.JJImage.new({
+        image = "img/interim/ui/time_light.png"
+      })
+    self:addView(self.progressLight)
+    self.progressLight:setAnchorPoint(ccp(0.0, 0.5))
+
+    self.progressLightPos = self.dimens_:getDimens(self.progressBarViewSize.width/2) - self.progressLight:getViewSize().width
+    self.progressLight:setPosition(self.progressLightPos, self.dimens_:getDimens(70))
+    self.progressLight:setScale(self.dimens_.scale_)
+    self.progressLight:setVisible(false)
+
+	self.DEFAULT_TIMER = 5
+	self.timer = self.DEFAULT_TIMER
+	self.callTime = self.timer
+
+	self.alert = display.newSprite("img/interim/animate/red_fr/red_fr_1.png")
+    self.alert:setScale(self.dimens_.scale_*0.7)
+    self:getNode():addChild(self.alert)
+    self.alert:setVisible(false)
+
+    self.ALERT_STATUS_NONE = 0
+    self.ALERT_STATUS_GREEN = 1
+    self.ALERT_STATUS_RED = 2
+
+    self.alertStatus = self.ALERT_STATUS_NONE
+
+end
+
+function PlayerView:onPortraitClicked(view)
+	print("PlayerView:onPortraitClicked************")
+	self.parentView:onPortraitClicked(self)
+end
+
+function PlayerView:showSitButton()
+	--print("showSitButton")
+	self.sitButton:setVisible(true)
+	self.portraitFrame:setVisible(false)
+end
+
+function PlayerView:showPortraitFrame()
+	self.sitButton:setVisible(false)
+	self.portraitFrame:setVisible(true)
+end
+
+function PlayerView:setPlayerData(playerData)
+	if playerData ~= nil then
+		self.userID = playerData.tkInfo.userid
+
+		local texture = CCTextureCache:sharedTextureCache():addImage(self.portraitImage)
+   		self.portrait:setTexture(texture)
+   	
+		if self.userID ~= 0 then
+			local path = HeadImgManager:getImg(playerData.tkInfo.userid, playerData.tkInfo.figureId)
+			--print("PlayerView:setPlayerData path ", path)
+			if path ~= nil then
+				print("path : " .. path)
+				if CCFileUtils:sharedFileUtils():isFileExist(path) then
+					local texture = CCTextureCache:sharedTextureCache():addImage(path)
+		       		CCTextureCache:sharedTextureCache():removeTexture(texture)
+                	texture = CCTextureCache:sharedTextureCache():addImage(path)
+		       		self.portrait:setTexture(texture)
+		       	
+				end
+				self.portrait:setVisible(true)
+		    else
+		    	print("path is nil")
+			end
+			self:showPortraitFrame()
+		else
+			self:showSitButton()
+			self.portrait:setVisible(false)
+		end
+		--self:setVisible(true)
+	else
+		self:showSitButton()
+		self.portrait:setVisible(false)
+		--self:setVisible(false)
+	end
+end
+
+function PlayerView:showPortrait(image)
+	self.portrait:setVisible(true)
+end
+
+function PlayerView:cancelCalling()
+	
+end
+
+function PlayerView:setCalling(countDown)
+	local path = "img/interim/ui/current_framework.png"
+	local texture = CCTextureCache:sharedTextureCache():addImage(path)
+   	self.portraitFrame:setTexture(texture)
+
+   	local gameData = GameDataContainer:getGameData(INTERIM_MATCH_ID)
+   	self.timer = tonumber(gameData.property.callTime) 
+   	if countDown == true then
+   		self:startCountDown( self.timer  )
+   	else
+   		self:stopCountDown()
+   	end
+   --	self.portraitFrame:setVisible(true)
+end
+
+function PlayerView:startCountDown(count)
+    JJLog.i(TAG, "startCountDown count=", count)
+    self.red = 0
+    self.green = 255
+    self.blue = 0
+    self.percentage = 100
+
+    --如果定时器没有停止，那么停止后重新开启定时
+    if self.countDown_ ~= nil then     
+        self:stopCountDown()
+    end
+    --self:destoryBreakNetState()
+
+    if self.countDown_ == nil then
+        local image = "img/interim/ui/count_down_bg.png"
+        local to = CCProgressFromTo:create(count, 100, 0)
+        self.countDownSprite = CCSprite:create(image)
+
+        self.countDownSprite:setColor(ccc3(self.red, self.green, self.blue))
+
+        self.countDown_ = CCProgressTimer:create(self.countDownSprite)
+        self.countDown_:setType(kCCProgressTimerTypeRadial)
+        self.countDown_:setAnchorPoint(ccp(0.5, 0.5))
+        self.countDown_:setPosition(ccp(0, 0))
+        self.countDown_:setScale(self.dimens_.scale_)
+        self.countDown_:setReverseDirection(true)
+        -- self.countDown_:setPercentage(self.percentage)
+        self.countDown_:runAction(to)
+        self.countDown_:setTag(110)
+        self:getNode():addChild(self.countDown_)
+    end
+
+    self.playClick = false   -- 播放倒计时音效标志
+
+    local updateTime = count / self.percentage
+    JJLog.i(TAG, "updateTime is ", updateTime)
+    JJLog.i(TAG, "self.countDown_ is ", self.countDown_)
+    self.countDownScheduleHandler_ = scheduler.scheduleGlobal(function()
+        self:updateCountdown()
+    end, updateTime)
+
+    local delaytime = CCDelayTime:create(count)
+    local callBack = CCCallFunc:create(handler(self, self.countDownTimeOut))
+    local aryAction = CCArray:create()
+    aryAction:addObject(delaytime)
+    aryAction:addObject(callBack)
+    local actions = CCSequence:create(aryAction)
+    self:runAction(actions)
+end
+
+function PlayerView:getRed()
+    --self.red = self.red + (100 - self.percentage) * (255 - self.red) / 2000
+end
+
+function PlayerView:getGreen()
+    --self.green = self.green - (100 - self.percentage) * (self.green) / 2000
+end
+
+function PlayerView:getBlue()
+end
+
+function PlayerView:updateColor()
+    self:getRed()
+    self:getGreen()
+    self:getBlue()
+end
+
+function PlayerView:updateCountdown()
+    if self.countDown_ then
+        self.percentage = self.countDown_:getPercentage()
+        --print("updateCountdown:percentage:**__ " .. self.percentage)
+
+       if self.percentage < 50 and self.playClick == false and self.userID == UserInfo.userId_ then
+            self.timeClickSoundHandler_ = scheduler.scheduleGlobal(function()
+            self:updateTimeSound() end, 0.5)
+            self.playClick = true
+        end
+
+        if self.percentage <= 0 then
+            self.percentage = 0
+        else
+            self:updateColor()
+            self.countDownSprite:setColor(ccc3(self.red, self.green, self.blue))
+        end
+    end
+end
+
+function PlayerView:countDownTimeOut()
+    -- body
+    if self.countDown_ ~= nil then
+        self:stopCountDown()
+    end
+
+    if self.parentView then
+        self.parentView:countDownExpire()
+    end
+
+    --self:showBreakNetState()
+end
+
+function PlayerView:stopCountDown()
+    if self.countDown_ then
+        local countDown = self:getNode():getChildByTag(110)
+        if countDown ~= nil then
+            self:getNode():removeChild(countDown, false)
+        end
+
+        --self.countDown_:stop()
+        self:stopAllActions()
+    end
+    self.countDown_ = nil
+
+    if self.countDownScheduleHandler_ then
+        scheduler.unscheduleGlobal(self.countDownScheduleHandler_)
+    end
+
+    if  self.timeClickSoundHandler_ then  --停止音效播放定时器
+        scheduler.unscheduleGlobal(self.timeClickSoundHandler_)
+    end
+end
+
+function PlayerView:updateTimeSound()
+    print("updateTimeSound**********************9999999999999999")
+    SoundManager:playEffect(INTERIM_SOUND.TIMER)
+end
+
+-- function PlayerView:startCountDown()
+
+-- 	-- if self.progressBar:isRunning() then
+-- 	-- 	return
+-- 	-- end
+
+-- 	if self.alertStatus ~= self.ALERT_STATUS_NONE then
+-- 		return
+-- 	end
+
+
+-- 	local gameData = GameDataContainer:getGameData(INTERIM_MATCH_ID)
+    
+-- 	self.timer = tonumber(gameData.property.callTime) 
+-- 	self.callTime = tonumber(gameData.property.callTime) 
+-- 	if self.timer == 0 then
+-- 		self.timer = self.DEFAULT_TIMER
+-- 	end
+
+-- 	 if self.userID == UserInfo.userId_ then
+-- 	    self.progressBar:setVisible(true)
+-- 	    self.progressBg:setVisible(true)
+-- 		self.progressBar:setViewSize(self.progressBarViewSize.width, 
+-- 		self.progressBarViewSize.height)
+-- 		--self.progressLight:setVisible(true)
+-- 		--self.progressLight:setPositionX(self.progressLightPos)
+-- 	else
+-- 		self.progressBar:setVisible(false)
+-- 		self.progressBg:setVisible(false)
+-- 		--self.progressLight:setVisible(false)
+-- 	end
+	
+-- 	self:alertPlayAnimation()
+
+--     local array = CCArray:create()
+--     array:addObject(CCDelayTime:create(1.0))
+--     array:addObject(CCCallFunc:create(handler(self, self.countDown)))
+--     local seq = CCSequence:create(array)
+--     self.progressBar:runAction(seq) 
+-- end
+
+-- function PlayerView:stopCountDown()
+-- 	self.progressBar:stopAllActions()
+-- 	self.progressBar:setVisible(false)
+-- 	self.progressBg:setVisible(false)
+-- 	--self.progressLight:setVisible(false)
+-- 	self.alert:stopAllActions()
+-- 	self.alert:setVisible(false)
+-- 	self.alertStatus = self.ALERT_STATUS_NONE
+
+-- end
+
+-- function PlayerView:countDown()
+-- 	self.timer = self.timer - 0.1
+-- 	if self.timer < 0 then
+-- 		self.parentView:countDownExpire()
+-- 		self.alertStatus = self.ALERT_STATUS_NONE
+-- 		self.alert:setVisible(false)
+    	
+-- 		self.progressBar:setVisible(false)
+-- 		--self.progressLight:setVisible(false)
+-- 		self.progressBg:setVisible(false)
+-- 	else
+-- 		print("self.progressBar:setViewSize")
+-- 		local width = self.progressBarViewSize.width*self.timer/self.callTime
+-- 		local viewSize = CCSize(width, self.progressBarViewSize.height)
+-- 		self.progressBar:setViewSize(width, self.progressBarViewSize.height)
+-- 		local timeHideWidth = self.progressBarViewSize.width / self.callTime
+-- 		--self.progressLight:setPositionX(self.progressBar:getPositionX() + width*2 )--- 
+
+-- 		local array = CCArray:create()
+-- 	    array:addObject(CCDelayTime:create(0.1))
+-- 	    array:addObject(CCCallFunc:create(handler(self, self.countDown)))
+-- 	    local seq = CCSequence:create(array)
+-- 	    self.progressBar:runAction(seq)
+
+-- 	    if self.userID == UserInfo.userId_ then
+-- 	    	SoundManager:playEffect(INTERIM_SOUND.TIMER)
+-- 		end
+-- 	end
+-- end
+
+function PlayerView:alertStopAnimation()
+	self.alert:stopAllActions()
+	self.alert:setVisible(false)
+	self.alertStatus = self.ALERT_STATUS_NONE
+end
+
+function PlayerView:alertPlayAnimation()
+	self.alert:setVisible(true)
+	-- self.alertStatus = self.ALERT_STATUS_GREEN
+	-- self.alert:setVisible(true)
+	-- local animation = AnimationFactory:createGreenFrame()
+	-- self.alert:playAnimationForever(animation, 0)
+
+	local function onComplete()
+		self:alertPlayAnimation()
+    end
+
+    if self.timer <= 0 then
+    	return
+    end
+
+    local animation
+    if self.timer/self.callTime < 0.5 then
+    	animation = AnimationFactory:createRedFrame()
+    	self.alertStatus = self.ALERT_STATUS_RED
+    else
+    	animation = AnimationFactory:createGreenFrame()
+    	self.alertStatus = self.ALERT_STATUS_GREEN
+    end
+  
+    self.alert:playAnimationOnce(animation, false, onComplete)
+
+end
+
+function PlayerView:setNormal()
+	local path = "img/interim/ui/portrait_frame.png"
+	local texture = CCTextureCache:sharedTextureCache():addImage(path)
+   	self.portraitFrame:setTexture(texture)
+   	self:stopCountDown()
+   --	self.portraitFrame:setVisible(true)
+end
+
+function PlayerView:setStandBy()
+	self.portrait:setOpacity(100)
+end
+
+function PlayerView:setEngaged()
+	self.portrait:setOpacity(255)
+end
+
+return PlayerView

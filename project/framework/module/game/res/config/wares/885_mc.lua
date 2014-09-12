@@ -1,0 +1,1 @@
+{"ware_name":"poker铁戒指胚子","ico":"108760.jpg","ware_explain":"本坯子可以合成为铁戒指，而铁戒指可以参加德州扑克3G手机、叶子高手争霸等大型赛事。20枚铁戒坯子可以合成为1枚铁戒指","status":0,"merit_ware_intro":"本胚子可以合成为铁戒指，胚子和铁戒指都可以报名众多回馈赛","ware_introduction":"2500金币进场及以下的都可以获得，锦标赛也可以获得","composite":1,"last_update":1402397829,"reward_explain":"","ware_id":885,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:18","reward":0}

@@ -1,0 +1,1 @@
+{"ware_name":"风林火山残卷","ico":"108703.jpg","ware_explain":"风林火山兵书残卷。每20张可合成风林火山第1-6卷中的任意一卷！合成后奖励6666金币","status":0,"merit_ware_intro":"可最终合成“悟·风林火山”，手机版最高荣誉物品，具体合成方案请进入个人中心-合成炉查看！","ware_introduction":"","composite":1,"last_update":1402393021,"reward_explain":"","ware_id":2094,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:21","reward":0}

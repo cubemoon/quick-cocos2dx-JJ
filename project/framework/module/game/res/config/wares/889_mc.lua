@@ -1,0 +1,1 @@
+{"ware_name":"秋季回馈卡","ico":"108722.jpg","ware_explain":"累计一定数量的秋卡可以在兑奖中心内兑换各种奖品，同时也可以兑换成金币或金豆哦！  \n有效期：请于2014年12月31日24:00之前使用！","status":0,"merit_ware_intro":"","ware_introduction":"","composite":1,"last_update":1402394434,"reward_explain":"","ware_id":889,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:18","reward":0}

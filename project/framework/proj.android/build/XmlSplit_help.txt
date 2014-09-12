@@ -1,0 +1,21 @@
+一、改进原因：
+由于游戏初次安装和版本更新后启动游戏时初始化文件太慢，现在已将比赛配置、物品介绍、成就介绍、排行榜规则和合成炉预置文件都拆分成单个存放在项目根目录下的assets中了。
+
+二、工具存放路径
+    在build文件夹下，大家有需要更改工具的，请及时在此处更新。
+
+三、使用方法：
+（1） 将xmlSplit.jar和要拆分的xml放在同一目录
+      比如要拆matchs.xml，就在此目录中执行java -jar XmlSplit.jar matchs.xml match，拆分出来的单个比赛xxx_mc.xml就都生成到match文件夹中了。
+      请将raw下的matchs.xml，ware_intro.xml，grow_intro.xml和warecompose.xml拆分后放到assets中。
+      记得拆之前取一遍最新的，最后别忘了把raw下这几个xml删掉。
+
+（2） 比如要拆分排行榜规则，首先在以下URL（这个是内网的，之后会更新外网的）去最新的XML保存为rank.xml
+      http://192.168.10.30/jjmweb/index.php?r=RankRule/GetRankRuleList&browse=2&uid=21212&exp=50000&plat=android&gameid=1001&protocol=xml&rule_uptime=0&match_uptime=0
+      之后执行java -jar XmlSplit.jar rank.xml rank，拆分出来的排行榜规则就都生成到rank文件夹中了。
+      将rank文件放到assets中即可
+
+四、注意事项：
+（1） 要拆分的xml应该直接在浏览器中查看源代码另存为来拆分，不要复制出来，否则会有编码问题。
+（2） 另外也不要修改格式，不要去掉<?xml version="1.0" encoding="UTF-8"?><root></root>
+（3） 目前只需要修改【比赛配置及排行榜规则】就行了，其他三个配置每个项目都是一样的，直接从【斗地主】拷过去就行了

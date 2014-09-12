@@ -1,0 +1,1 @@
+{"ware_name":"百万富翁牌匾","ico":"108758.jpg","ware_explain":"百万富翁牌匾只发给在德州百万富翁成就赛中获得冠军的选手！拥有本牌匾者已经是德州的顶级选手了，恭喜您！","status":0,"merit_ware_intro":"","ware_introduction":"","composite":0,"last_update":1402397772,"reward_explain":"","ware_id":1246,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:19","reward":0}

@@ -1,0 +1,1 @@
+{"ware_name":"德州夺魂票","ico":"108750.jpg","ware_explain":"不鸣则已，一鸣惊人！德州扑克金戒指大战中级门票，预赛第2 - 9名获得。凭此票报名金戒指大战初始筹码12W。","status":0,"merit_ware_intro":"","ware_introduction":"德州扑克金戒指大战中级门票，预赛第2 - 9名获得。凭此票报名金戒指大战初始筹码12W。","composite":0,"last_update":1402397534,"reward_explain":"","ware_id":1632,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:19","reward":0}

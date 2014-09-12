@@ -1,0 +1,1 @@
+{"ware_name":"移动充值百元兑换券","ico":"94190.jpg","ware_explain":"可兑换移动百元手机充值卡。PS:本物品自获得之时起，于160小时后消失，请您抓紧时间兑奖。","status":0,"merit_ware_intro":"","ware_introduction":"","composite":0,"last_update":1398321641,"reward_explain":"您好！在您兑奖后我们会为您的手机直充100元话费，请您在24小时内查询您的话费情况，如有问题请您及时联系我们。","ware_id":510,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:17","reward":7}

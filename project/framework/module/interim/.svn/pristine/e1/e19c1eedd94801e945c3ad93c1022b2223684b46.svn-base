@@ -1,0 +1,182 @@
+local JJViewGroup = require("sdk.ui.JJViewGroup")
+local MessageView = class("MessageView", JJViewGroup)
+
+function MessageView:ctor(parentView)
+	MessageView.super.ctor(self, parentView)
+	self.parentView = parentView
+	self.dimens_ = parentView.dimens_
+	self:initView()
+end
+
+function MessageView:initView()
+    self.showBlock = false
+    self.firstWarnBottom = true
+
+    self.background = jj.ui.JJImage.new({
+         image = "img/interim/ui/msg_bg.png",
+      })
+    self.background:setAnchorPoint(ccp(0.5, 0.5))
+    self.background:setPosition(0, 0)
+    self.background:setScale(self.dimens_.scale_)
+    self:addView(self.background)
+
+    self.msgLabel = jj.ui.JJLabel.new({
+        fontSize = 22*self.dimens_.scale_,
+        color = ccc3(255, 255, 255),
+        text = "您当前正在旁观，赶快找个座位坐下玩吧",
+    })
+    self.msgLabel:setAnchorPoint(ccp(0.5, 0.5))
+    self.msgLabel:setPosition(0, 0)
+    self:addView(self.msgLabel)
+end
+
+function MessageView:showEmptyTableNextRound()
+  if self.showBlock == true then
+    return
+  end
+
+  local involkCount = CCUserDefault:sharedUserDefault():getIntegerForKey("showEmptyTableNextRound")
+  if involkCount < 3 then
+      involkCount = involkCount + 1
+      CCUserDefault:sharedUserDefault():setIntegerForKey("showEmptyTableNextRound", involkCount)
+  else
+      return 
+  end
+
+  self.background:setScaleX(self.dimens_.scale_)
+  self:setVisible(true)
+  self.msgLabel:setText("锅底被赢光了，自动开始下一局")
+  local array = CCArray:create()
+  array:addObject(CCDelayTime:create(1))
+  array:addObject(CCCallFunc:create(handler(self, self.hide)))
+  local seq = CCSequence:create(array)
+  self.msgLabel:runAction(seq) 
+end
+
+function MessageView:showAutoFold()
+  if self.showBlock == true then
+    return
+  end
+
+  local involkCount = CCUserDefault:sharedUserDefault():getIntegerForKey("showAutoFold")
+  if involkCount < 3 then
+      involkCount = involkCount + 1
+      CCUserDefault:sharedUserDefault():setIntegerForKey("showAutoFold", involkCount)
+  else
+      return 
+  end
+
+  self.background:setScaleX(self.dimens_.scale_) 
+  self:setVisible(true)
+  self.msgLabel:setText("两张牌连号，无法进行卡当")
+  local array = CCArray:create()
+  array:addObject(CCDelayTime:create(2))
+  array:addObject(CCCallFunc:create(handler(self, self.hide)))
+  local seq = CCSequence:create(array)
+  self.msgLabel:runAction(seq) 
+end
+
+function MessageView:hide()
+    self:setVisible(false)
+end
+
+function MessageView:showShowBottomTooMuch(bottom)
+  if self.firstWarnBottom ~= true then
+    return
+  end
+
+  self.firstWarnBottom = false
+
+  self.showBlock = true
+
+  self:setVisible(true)
+  self.msgLabel:setText("桌面筹码不多于" .. bottom .. "您方可开始游戏")
+  local array = CCArray:create()
+  array:addObject(CCDelayTime:create(2))
+  array:addObject(CCCallFunc:create(handler(self, self.hideBlock)))
+  local seq = CCSequence:create(array)
+  self.msgLabel:runAction(seq) 
+end
+
+function MessageView:hideBlock()
+   self.showBlock = false
+   self:hide()
+end
+
+function MessageView:showDividTable(hasPlayerOut)
+  local gameData = GameDataContainer:getGameData(INTERIM_MATCH_ID)
+  
+  if hasPlayerOut == true then
+    if gameData:getMyPlayerInfo() ~= nil then
+      local text = "玩家淘汰，平均分得：" .. gameData.divideTableCoinSingle
+      self.msgLabel:setText(text)
+      self.background:setScaleX(self.dimens_.scale_*1.2)
+    else
+      return
+    end
+  else
+    local involkCount = CCUserDefault:sharedUserDefault():getIntegerForKey("showAutoFold")
+    if involkCount < 3 then
+        involkCount = involkCount + 1
+        CCUserDefault:sharedUserDefault():setIntegerForKey("showAutoFold", involkCount)
+    else
+        return 
+    end
+    
+    self.msgLabel:setText("基数增长，池底小于1倍基数，桌上积分平分")
+    self.background:setScaleX(self.dimens_.scale_*1.35)
+  
+  end
+  
+  self:setVisible(true)
+  local array = CCArray:create()
+  array:addObject(CCDelayTime:create(3))
+  array:addObject(CCCallFunc:create(handler(self, self.hide)))
+  local seq = CCSequence:create(array)
+  self.msgLabel:runAction(seq) 
+end
+
+function MessageView:showForceMessage(message)
+  self.showBlock = true
+
+  self.msgLabel:stopAllActions()
+  self:setVisible(true)
+  self.msgLabel:setText(message)
+
+  local msgLabelWidth = self.msgLabel:getWidth()
+  local backgroundWidth = self.background:getWidth()
+  local backgroundScaleX = (msgLabelWidth + 40) / backgroundWidth
+  self.background:setScaleX(self.dimens_.scale_* backgroundScaleX)
+
+  local array = CCArray:create()
+  array:addObject(CCDelayTime:create(1))
+  array:addObject(CCCallFunc:create(handler(self, self.hideBlock)))
+  local seq = CCSequence:create(array)
+  self.msgLabel:runAction(seq)
+
+end
+
+function MessageView:showHPAdded(hp)
+
+  local gameData = GameDataContainer:getGameData(INTERIM_MATCH_ID)
+  if gameData.shouldShowBuyChipResult ~= true then
+    return
+  end
+
+  gameData.shouldShowBuyChipResult = false
+
+  self.showBlock = true
+
+  self.msgLabel:stopAllActions()
+
+  self.background:setScaleX(self.dimens_.scale_*1)
+  self:setVisible(true)
+  self.msgLabel:setText("您成功兑换了" .. hp .. "筹码")
+  local array = CCArray:create()
+  array:addObject(CCDelayTime:create(2))
+  array:addObject(CCCallFunc:create(handler(self, self.hideBlock)))
+  local seq = CCSequence:create(array)
+  self.msgLabel:runAction(seq) 
+end
+
+return MessageView

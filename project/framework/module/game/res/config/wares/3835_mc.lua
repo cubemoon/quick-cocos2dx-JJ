@@ -1,0 +1,1 @@
+{"ware_name":"话费兑换卡","ico":"","ware_explain":"攒够100张话费兑换卡，可兑换5元充值卡1张，请到背包-合成炉查看！\n","status":0,"reward_explain":"","ware_introduction":"","ctime":"2013-08-08 17:13:38","merit_ware_intro":"","last_update":1375953218,"ware_id":3835,"mobile_ware_type":1,"composite":1,"reward":1}

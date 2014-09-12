@@ -1,0 +1,1 @@
+{"ware_name":"欢斗周榜门票","ico":"108696.jpg","ware_explain":"用于报名参与针对晋级JJ欢乐斗地主职业积分榜和A类冠军榜TOP800的玩家开启的专属周赛，从获得入场券开始200小时后失效，比赛在一战成名赛区。","status":0,"merit_ware_intro":"","ware_introduction":"进入JJ欢乐斗上周职业积分榜和A类冠军榜TOP800的玩家可免费获得下周排行榜PK赛的比赛门票，比赛在一战成名赛区。","composite":0,"last_update":1402392646,"reward_explain":"","ware_id":2976,"mobile_ware_type":1,"ctime":"2012-11-01 10:50:03","reward":0}

@@ -1,0 +1,1 @@
+{"ware_name":"明星卡","ico":"108761.jpg","ware_explain":"本卡只在德州扑克-大师场-明星桌内发放.积累越多的明星卡，说明您在明星舞台上表演的时间越长，是荣耀和牌技高超的象征。","status":0,"merit_ware_intro":"","ware_introduction":"本卡只在德州扑克-大师场-明星桌内发放","composite":0,"last_update":1402397860,"reward_explain":"","ware_id":884,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:18","reward":0}

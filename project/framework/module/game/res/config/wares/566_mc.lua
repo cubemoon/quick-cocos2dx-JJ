@@ -1,0 +1,1 @@
+{"ware_name":"赢三张达人卡","ico":"108762.jpg","ware_explain":"赢三张资深玩家才能达到的荣誉物品。拥有者只要赢三张经验和大师分达到一定要求就能得到赢三张达人的称号。也是在合成炉合成“赢三张牌神卡”的必要材料。","status":0,"merit_ware_intro":"","ware_introduction":"可在超级明星挑战赛获得","composite":0,"last_update":1402397914,"reward_explain":"","ware_id":566,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:17","reward":0}

@@ -1,0 +1,1 @@
+{"ware_name":"扑克坯子","ico":"","ware_explain":"没有仙术护佑的扑克坯子，能合成炉中随机制成扑克牌，但失败几率很大。","status":0,"reward_explain":"","ware_introduction":"","ctime":"2012-04-09 16:24:17","merit_ware_intro":"","last_update":1337569432,"ware_id":104,"mobile_ware_type":1,"composite":0,"reward":0}

@@ -1,0 +1,1 @@
+{"ware_name":"斗地主全国冠军奖杯","ico":"","ware_explain":"获得全国斗地主锦标赛冠军，即可获得该奖杯","status":0,"merit_ware_intro":"","ware_introduction":"","composite":0,"last_update":1396423357,"reward_explain":"0","ware_id":4218,"mobile_ware_type":1,"ctime":"2014-02-13 19:53:29","reward":0}

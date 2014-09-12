@@ -1,0 +1,1 @@
+{"ware_name":"斗地主大师证","ico":"108688.jpg","ware_explain":"斗地主大师的身份的象征，执此证者可以获得斗地主大师称号。","status":0,"merit_ware_intro":"","ware_introduction":"","composite":0,"last_update":1402389939,"reward_explain":"0","ware_id":4167,"mobile_ware_type":1,"ctime":"2014-01-09 10:48:20","reward":0}

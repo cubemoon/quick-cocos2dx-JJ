@@ -1,0 +1,1 @@
+{"ware_name":"赖斗王选拔赛决赛门票","ico":"56146.jpg","ware_explain":"拥有此票可参与每月6号晚上20:00的“赖斗王选拔决赛”和每月20号晚上20:00的“神农鼎传奇赛”。","status":0,"merit_ware_intro":"","ware_introduction":"可以在赖斗王复赛、5w岛屿中获得获得","composite":1,"last_update":1402390789,"reward_explain":"0","ware_id":2235,"mobile_ware_type":1,"ctime":"2013-11-05 12:44:41","reward":0}

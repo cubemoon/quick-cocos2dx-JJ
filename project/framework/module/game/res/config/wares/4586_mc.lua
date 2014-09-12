@@ -1,0 +1,1 @@
+{"ware_name":"巴西足球","ico":"108650.jpg","ware_explain":"每个巴西足球可合成500金币，物品有效时间至2014-07-18。","status":0,"reward_explain":"","ware_introduction":"比赛发放","composite":1,"last_update":1402387034,"merit_ware_intro":"","ware_id":4586,"mobile_ware_type":1,"ctime":"2014-06-10 15:57:14","reward":0}

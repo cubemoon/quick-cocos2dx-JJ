@@ -1,0 +1,1 @@
+{"ware_name":"幸运卡","ico":"","ware_explain":"幸运卡，可用于幸运转盘的转奖，转奖1次消耗1张幸运卡。此物品的有效期到2014年5月30日。","status":0,"merit_ware_intro":"","ware_introduction":"","composite":0,"last_update":1396424182,"reward_explain":"","ware_id":3994,"mobile_ware_type":1,"ctime":"2013-10-23 10:06:32","reward":0}

@@ -1,0 +1,1 @@
+{"ware_name":"三人行复活卡","ico":"108704.jpg","ware_explain":"集齐一定数量的三人行复活卡可以参赛“三人行必有地主焉”比赛","status":0,"merit_ware_intro":"集齐10张三人行复活卡可以参赛“三人行必有地主焉”比赛","ware_introduction":"可在“三人行必有地主焉”比赛获得","composite":0,"last_update":1402393048,"reward_explain":"","ware_id":2082,"mobile_ware_type":1,"ctime":"2012-04-09 16:24:21","reward":0}
